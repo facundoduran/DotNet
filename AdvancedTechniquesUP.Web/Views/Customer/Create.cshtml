@@ -1,0 +1,52 @@
+﻿@model AdvancedTechniques.UP.Business.ViewModel.CustomerViewModel
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create customer</h2>
+
+@using (Html.BeginForm())
+{
+    <div class="editor-label">
+        @Html.LabelFor(x => x.FirstName)
+    </div>
+
+    <div class="editor-field">
+        @Html.TextBoxFor(x => x.FirstName)
+    </div>
+
+    <div class="editor-label">
+        @Html.LabelFor(x => x.LastName)
+    </div>
+
+    <div class="editor-field">
+        @Html.TextBoxFor(x => x.LastName)
+    </div>
+    
+    <div class="editor-label">
+        @Html.LabelFor(x => x.Document)
+    </div>
+
+    <div class="editor-field">
+        @Html.TextBoxFor(x => x.Document)
+    </div>
+    
+    <div class="editor-label">
+        @Html.LabelFor(x => x.Telephone)
+    </div>
+
+    <div class="editor-field">
+        @Html.TextBoxFor(x => x.Telephone)
+    </div>
+    
+    <div class="editor-label">
+        @Html.LabelFor(x => x.Email)
+    </div>
+
+    <div class="editor-field">
+        @Html.TextBoxFor(x => x.Email)
+    </div>
+    
+    <input type="submit" value="Sign up" />    
+}

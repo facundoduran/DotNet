@@ -1,0 +1,32 @@
+﻿<!--==============================
+              header
+=================================-->
+<header>
+<!--==============================
+            Stuck menu
+=================================-->
+  <section id="stuck_container">
+    <div class="container">
+      <div class="row">
+        <div class="grid_12">
+        <h1>
+          <a href="@Url.Action("Index", "Home")">
+            <img src="@Url.Content("~/content/images/logo.png")" alt="Logo alt">
+          </a>
+        </h1>  
+          <div class="navigation">
+            <nav>
+              <ul class="sf-menu">
+               <li class="current"><a href="@Url.Action("Index", "Home")">home</a></li>
+               <li><a href="@Url.Action("Index", "Menu")">menu</a></li>
+               <li><a href="@Url.Action("Create", "Booking")">reservation</a></li>
+               <li><a href="@Url.Action("Index", "Contact")">contacts</a></li>
+             </ul>
+            </nav>        
+            <div class="clear"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> 
+</header>   

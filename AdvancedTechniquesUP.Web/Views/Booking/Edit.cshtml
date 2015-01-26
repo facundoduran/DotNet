@@ -1,0 +1,37 @@
+﻿@model AdvancedTechniques.UP.Business.ViewModel.BookingViewModel
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm())
+{
+    <div class="editor-label">
+        @Html.LabelFor(x => x.FromTime)
+    </div>
+
+    <div class="editor-field">
+        @Html.TextBoxFor(x => x.FromTime)
+    </div>
+
+    <div class="editor-label">
+        @Html.LabelFor(x => x.ToTime)
+    </div>
+
+    <div class="editor-field">
+        @Html.TextBoxFor(x => x.ToTime)
+    </div>
+    
+    <div class="editor-label">
+        @Html.LabelFor(x => x.Table.Capacity)
+    </div>
+
+    <div class="editor-field">
+        @Html.TextBoxFor(x => x.Table.Capacity)
+    </div>
+        
+    <input type="submit" value="Sign up" />    
+}
+

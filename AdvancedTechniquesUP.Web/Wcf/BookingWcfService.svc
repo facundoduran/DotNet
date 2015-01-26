@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="AdvancedTechniques.Web.Wcf.BookingWcfService" Factory="AdvancedTechniques.Web.App_Start.UnityServiceHostFactory" CodeBehind="BookingWcfService.svc.cs" %>

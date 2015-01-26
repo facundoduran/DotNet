@@ -1,0 +1,23 @@
+﻿<Window x:Class="AdvancedTechniquesUP.Desktop.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <DockPanel>
+            <Menu DockPanel.Dock="Top">
+                <MenuItem Header="_Reservas">
+                    <MenuItem Header="_Crear" Name="MenuItemCreateBooking" Click="MenuItemCreateBooking_Click" />
+                    <MenuItem Header="_Editar"  Name="MenuItemEditBooking" Click="MenuItemEditBooking_Click"/>
+                    <MenuItem Header="_Cancelar"  Name="MenuItemDeleteBooking" Click="MenuItemDeleteBooking_Click"/>
+                </MenuItem>
+                <MenuItem Header="_Clientes">
+                    <MenuItem Header="Crear" Name="MenuItemCreateCustomer" Click="MenuItemCreateCustomer_Click" />
+                    <MenuItem Header="Actualizar Datos" Name="MenuItemUpdateCustomer" Click="MenuItemUpdateCustomer_Click"/>
+                    <MenuItem Header="Eliminar" Name="MenuItemDeletecustomer" Click="MenuItemDeletecustomer_Click" />
+                </MenuItem>
+            </Menu>
+            <StackPanel></StackPanel>
+        </DockPanel>
+
+    </Grid>
+</Window>

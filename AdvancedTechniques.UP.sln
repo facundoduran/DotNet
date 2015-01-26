@@ -1,0 +1,83 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdvancedTechniques.UP.Business", "AdvancesTechniques.UP.Business\AdvancedTechniques.UP.Business.csproj", "{FE4D90EE-2FE6-471C-A589-7FB542353BE5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdvancedTechniques.UP.Persistence.Sql", "AdvancesTechniques.UP.Persistence.Sql\AdvancedTechniques.UP.Persistence.Sql.csproj", "{667DEF4D-BD75-43E3-AD97-16C1D9F54C31}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdvancedTechniques.UP.Common", "AdvancesTechniques.UP.Common\AdvancedTechniques.UP.Common.csproj", "{4CAF8D17-1B77-429D-AE02-4603F40BBD5F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdvancedTechniques.UP.Services", "AdvancesTechniques.UP.Services\AdvancedTechniques.UP.Services.csproj", "{57CBE09C-E056-409E-8334-132F03FF0FD5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdvancedTechniquesUP.Test", "AdvancesTechniquesUP.Test\AdvancedTechniquesUP.Test.csproj", "{51B91B86-B2E5-4E60-89DB-C35BDACE3346}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdvancedTechniques.UP.Desktop", "AdvancesTechniquesUP.Desktop\AdvancedTechniques.UP.Desktop.csproj", "{4453D1D2-A337-4101-9DAE-ED2EF22B095E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdvancedTechniques.UP.Web", "AdvancedTechniquesUP.Web\AdvancedTechniques.UP.Web.csproj", "{0464DFC4-47AD-408C-B09C-81FCA5BFBC79}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 8
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://facundoduran.visualstudio.com/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = AdvancesTechniques.UP.Business\\AdvancedTechniques.UP.Business.csproj
+		SccProjectName1 = AdvancesTechniques.UP.Business
+		SccLocalPath1 = AdvancesTechniques.UP.Business
+		SccProjectUniqueName2 = AdvancesTechniques.UP.Common\\AdvancedTechniques.UP.Common.csproj
+		SccProjectName2 = AdvancesTechniques.UP.Common
+		SccLocalPath2 = AdvancesTechniques.UP.Common
+		SccProjectUniqueName3 = AdvancesTechniques.UP.Persistence.Sql\\AdvancedTechniques.UP.Persistence.Sql.csproj
+		SccProjectName3 = AdvancesTechniques.UP.Persistence.Sql
+		SccLocalPath3 = AdvancesTechniques.UP.Persistence.Sql
+		SccProjectUniqueName4 = AdvancesTechniques.UP.Services\\AdvancedTechniques.UP.Services.csproj
+		SccProjectName4 = AdvancesTechniques.UP.Services
+		SccLocalPath4 = AdvancesTechniques.UP.Services
+		SccProjectUniqueName5 = AdvancesTechniquesUP.Test\\AdvancedTechniquesUP.Test.csproj
+		SccProjectName5 = AdvancesTechniquesUP.Test
+		SccLocalPath5 = AdvancesTechniquesUP.Test
+		SccProjectUniqueName6 = AdvancesTechniquesUP.Desktop\\AdvancedTechniques.UP.Desktop.csproj
+		SccProjectName6 = AdvancesTechniquesUP.Desktop
+		SccLocalPath6 = AdvancesTechniquesUP.Desktop
+		SccProjectUniqueName7 = AdvancedTechniquesUP.Web\\AdvancedTechniques.UP.Web.csproj
+		SccProjectName7 = AdvancedTechniquesUP.Web
+		SccLocalPath7 = AdvancedTechniquesUP.Web
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FE4D90EE-2FE6-471C-A589-7FB542353BE5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE4D90EE-2FE6-471C-A589-7FB542353BE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE4D90EE-2FE6-471C-A589-7FB542353BE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE4D90EE-2FE6-471C-A589-7FB542353BE5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{667DEF4D-BD75-43E3-AD97-16C1D9F54C31}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{667DEF4D-BD75-43E3-AD97-16C1D9F54C31}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{667DEF4D-BD75-43E3-AD97-16C1D9F54C31}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{667DEF4D-BD75-43E3-AD97-16C1D9F54C31}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4CAF8D17-1B77-429D-AE02-4603F40BBD5F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4CAF8D17-1B77-429D-AE02-4603F40BBD5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4CAF8D17-1B77-429D-AE02-4603F40BBD5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4CAF8D17-1B77-429D-AE02-4603F40BBD5F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{57CBE09C-E056-409E-8334-132F03FF0FD5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57CBE09C-E056-409E-8334-132F03FF0FD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57CBE09C-E056-409E-8334-132F03FF0FD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57CBE09C-E056-409E-8334-132F03FF0FD5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{51B91B86-B2E5-4E60-89DB-C35BDACE3346}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51B91B86-B2E5-4E60-89DB-C35BDACE3346}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51B91B86-B2E5-4E60-89DB-C35BDACE3346}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51B91B86-B2E5-4E60-89DB-C35BDACE3346}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4453D1D2-A337-4101-9DAE-ED2EF22B095E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4453D1D2-A337-4101-9DAE-ED2EF22B095E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4453D1D2-A337-4101-9DAE-ED2EF22B095E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4453D1D2-A337-4101-9DAE-ED2EF22B095E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0464DFC4-47AD-408C-B09C-81FCA5BFBC79}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0464DFC4-47AD-408C-B09C-81FCA5BFBC79}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0464DFC4-47AD-408C-B09C-81FCA5BFBC79}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0464DFC4-47AD-408C-B09C-81FCA5BFBC79}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

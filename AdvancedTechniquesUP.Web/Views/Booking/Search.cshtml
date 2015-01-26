@@ -1,0 +1,13 @@
+﻿@model IEnumerable<AdvancedTechniques.UP.Business.ViewModel.BookingViewModel>
+@{
+    ViewBag.Title = "Search";
+}
+
+@foreach (var booking in Model)
+{    
+    
+           
+    @Html.Action("Edit", "BookingController", new { bookingId = booking.Id });
+    @Html.Action("Remove", "BookingController", new { bookingId = booking.Id });
+}
+

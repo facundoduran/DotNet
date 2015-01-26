@@ -1,0 +1,54 @@
+﻿@section scripts {
+    @Scripts.Render("~/Scripts/signalRJs")
+    <script src="~/signalr/hubs"></script>
+
+    <script type="text/javascript">
+
+        var connection = $.hubConnection();
+        var hub = connection.createHubProxy("OffersByDateHub");
+        hub.on("getOffersByDate", function (offersCount) {
+            $("#offers").text("Offers today :" + offersCount);
+        });
+
+        connection.start();
+        $(document).ready(function () {
+            $("#bookingForm").submit(function (e) {
+                debugger
+                e.preventDefault();
+
+                var form = $(this);
+
+                hub.server.getOffersByDate();
+            });
+        });
+
+    </script>
+}
+
+<p id="offers">Offers today :</p>
+
+
+@*
+<script type="text/javascript">
+
+    function getBookingCount() {
+        $.ajax({
+            url: '/booking/GetOffersByDay',
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            type: 'GET',
+            success: function (data) {
+                $("#offers").text("Offers today :" + data.offersDay);
+            }
+        });
+    }
+
+    setInterval(function () {
+        // Do something after 5 seconds
+        getBookingCount();
+    }, 2000);
+
+</script>
+
+<p id="offers">Offers today :</p>
+*@

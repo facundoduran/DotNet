@@ -7,8 +7,8 @@
     <ProjectGuid>{4453D1D2-A337-4101-9DAE-ED2EF22B095E}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>AdvancesTechniquesUP.Desktop</RootNamespace>
-    <AssemblyName>AdvancesTechniquesUP.Desktop</AssemblyName>
+    <RootNamespace>AdvancedTechniquesUP.Desktop</RootNamespace>
+    <AssemblyName>AdvancedTechniquesUP.Desktop</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>

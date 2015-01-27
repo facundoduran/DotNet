@@ -7,8 +7,8 @@
     <ProjectGuid>{57CBE09C-E056-409E-8334-132F03FF0FD5}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>AdvancesTechniques.UP.Services</RootNamespace>
-    <AssemblyName>AdvancesTechniques.UP.Services</AssemblyName>
+    <RootNamespace>AdvancedTechniques.UP.Services</RootNamespace>
+    <AssemblyName>AdvancedTechniques.UP.Services</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SccProjectName>SAK</SccProjectName>

@@ -7,8 +7,8 @@
     <ProjectGuid>{4CAF8D17-1B77-429D-AE02-4603F40BBD5F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>AdvancesTechniques.UP.Common</RootNamespace>
-    <AssemblyName>AdvancesTechniques.UP.Common</AssemblyName>
+    <RootNamespace>AdvancedTechniques.UP.Common</RootNamespace>
+    <AssemblyName>AdvancedTechniques.UP.Common</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SccProjectName>SAK</SccProjectName>

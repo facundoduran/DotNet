@@ -7,8 +7,8 @@
     <ProjectGuid>{FE4D90EE-2FE6-471C-A589-7FB542353BE5}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>AdvancesTechniques.UP.Business</RootNamespace>
-    <AssemblyName>AdvancesTechniques.UP.Business</AssemblyName>
+    <RootNamespace>AdvancedTechniques.UP.Business</RootNamespace>
+    <AssemblyName>AdvancedTechniques.UP.Business</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SccProjectName>SAK</SccProjectName>

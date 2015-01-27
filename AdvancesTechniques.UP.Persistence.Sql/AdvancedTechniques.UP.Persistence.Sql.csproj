@@ -7,8 +7,8 @@
     <ProjectGuid>{667DEF4D-BD75-43E3-AD97-16C1D9F54C31}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>AdvancesTechniques.UP.Persistence.Sql</RootNamespace>
-    <AssemblyName>AdvancesTechniques.UP.Persistence.Sql</AssemblyName>
+    <RootNamespace>AdvancedTechniques.UP.Persistence.Sql</RootNamespace>
+    <AssemblyName>AdvancedTechniques.UP.Persistence.Sql</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SccProjectName>SAK</SccProjectName>

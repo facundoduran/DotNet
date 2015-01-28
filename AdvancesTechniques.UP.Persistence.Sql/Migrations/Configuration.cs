@@ -10,7 +10,7 @@ namespace AdvancedTechniques.UP.Persistence.Sql.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = true;
+            AutomaticMigrationsEnabled = false;
         }
 
         protected override void Seed(AdvancedTechniques.UP.Persistence.Sql.RestaurantDbContext context)
@@ -27,7 +27,6 @@ namespace AdvancedTechniques.UP.Persistence.Sql.Migrations
 
                 context.Tables.AddOrUpdate(new Table { Name = tableName, Capacity = capacityRandom });
             }
-
             //  This method will be called after migrating to the latest version.
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 

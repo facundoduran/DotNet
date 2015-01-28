@@ -1,4 +1,5 @@
-﻿using AdvancedTechniquesUP.Desktop.Interfaces;
+﻿using AdvancedTechniques.UP.Services;
+using Microsoft.Practices.Unity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,28 +22,49 @@ namespace AdvancedTechniquesUP.Desktop
     /// </summary>
     public partial class MainWindow : Window
     {
-        private ICreateCustomer createCustomerWpfForm;
+        private ICustomerService customerService;
+        private IBookingService bookingService;
+        private ITableService tableService;
 
-        public MainWindow(ICreateCustomer createCustomerWpfForm)
+        #region Forms 
+        
+        private CreateBooking createBookingWpfForm;
+        private CreateCustomer createCustomerForm;
+        private SearchBookings searchBookingsForm;
+        private SearchCustomers searchCustomersForm;
+        private UpdateBooking updateBookingForm;
+        private UpdateCustomer updateCustomerForm;
+
+        #endregion
+
+        public MainWindow(ICustomerService customerService, IBookingService bookingService, ITableService tableService)
         {
             InitializeComponent();
-            this.createCustomerWpfForm = createCustomerWpfForm;
+
+            this.customerService = customerService;
+            this.bookingService = bookingService;
+            this.tableService = tableService;
+
+            this.createCustomerForm = new CreateCustomer(this.customerService);
+        }
+
+        private void MenuItemSearchBooking_Click(object sender, RoutedEventArgs e)
+        {
+
         }
 
         private void MenuItemCreateBooking_Click(object sender, RoutedEventArgs e)
         {
             CreateBooking createBookingWpfForm = new CreateBooking();
-            createBookingWpfForm.Show();
+            createBookingWpfForm.ShowDialog();
         }
 
         private void MenuItemEditBooking_Click(object sender, RoutedEventArgs e)
         {
-            this.ShowSearchCustomerWpfForm();
         }
 
         private void MenuItemDeleteBooking_Click(object sender, RoutedEventArgs e)
         {
-            this.ShowSearchCustomerWpfForm();
         }
 
         private void BtnCreateBooking_Click(object sender, RoutedEventArgs e)
@@ -53,39 +75,66 @@ namespace AdvancedTechniquesUP.Desktop
 
         private void BtnEditBooking_Click(object sender, RoutedEventArgs e)
         {
-            this.ShowSearchBookingWpfForm();
         }
 
         private void BtnDeleteBooking_Click(object sender, RoutedEventArgs e)
         {
-            this.ShowSearchBookingWpfForm();
         }
 
         private void MenuItemCreateCustomer_Click(object sender, RoutedEventArgs e)
         {
-            this.createCustomerWpfForm.Show();
+            this.ShowModalWindow(this.createCustomerForm);
         }
 
         private void MenuItemUpdateCustomer_Click(object sender, RoutedEventArgs e)
         {
-            this.ShowSearchCustomerWpfForm();
         }
 
         private void MenuItemDeletecustomer_Click(object sender, RoutedEventArgs e)
         {
-            this.ShowSearchCustomerWpfForm();
         }
 
-        private void ShowSearchBookingWpfForm() 
+        private void MenuItemSearchCustomer_Click(object sender, RoutedEventArgs e)
         {
-            SearchBookings searchBookingWpfForm = new SearchBookings();
-            searchBookingWpfForm.Show();
+
         }
 
-        private void ShowSearchCustomerWpfForm()
+        private void MenuItemSearchTable_Click(object sender, RoutedEventArgs e)
         {
-            SearchCustomers searchCustomer = new SearchCustomers();
-            searchCustomer.Show();
+
+        }
+
+        private void MenuItemCreateTable_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void MenuItemUpdateUpdateTable_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void MenuItemDeleteTable_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ShowModalWindow(Window window) 
+        {
+            if (window != null)
+            {
+                var modalDialog = (IModalWindow)window;
+                modalDialog.Clear();
+
+                window.Show();
+                window.Closed += CloseModalWindow;
+                this.IsEnabled = false;
+            }
+        }
+
+        private void CloseModalWindow(object sender, EventArgs e)
+        {
+            this.IsEnabled = true;
         }
     }
 }

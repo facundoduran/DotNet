@@ -101,17 +101,12 @@
     <Compile Include="CreateCustomer.xaml.cs">
       <DependentUpon>CreateCustomer.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Interfaces\ICreateCustomer.cs" />
+    <Compile Include="IModalWindow.cs" />
     <Compile Include="SearchBookings.xaml.cs">
       <DependentUpon>SearchBookings.xaml</DependentUpon>
     </Compile>
     <Compile Include="SearchCustomers.xaml.cs">
       <DependentUpon>SearchCustomers.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Service References\RestaurantService\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="UpdateBooking.xaml.cs">
       <DependentUpon>UpdateBooking.xaml</DependentUpon>
@@ -181,13 +176,6 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
-    <None Include="Service References\RestaurantService\AdvancesTechniquesUP.Desktop.RestaurantService.Booking.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\RestaurantService\AdvancesTechniquesUP.Desktop.RestaurantService.GetBookingsResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\RestaurantService\RestaurantService.wsdl" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">
@@ -245,16 +233,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>Restaurant.mdf</DependentUpon>
     </Content>
-    <None Include="Service References\RestaurantService\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
-    <None Include="Service References\RestaurantService\configuration.svcinfo" />
-    <None Include="Service References\RestaurantService\configuration91.svcinfo" />
-    <None Include="Service References\RestaurantService\RestaurantService.disco" />
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadataStorage Include="Service References\RestaurantService\" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

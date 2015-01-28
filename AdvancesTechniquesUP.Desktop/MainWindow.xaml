@@ -6,14 +6,22 @@
         <DockPanel>
             <Menu DockPanel.Dock="Top">
                 <MenuItem Header="_Reservas">
+                    <MenuItem Header="Buscar" Name="MenuItemSearchBooking" Click="MenuItemSearchBooking_Click" />
                     <MenuItem Header="_Crear" Name="MenuItemCreateBooking" Click="MenuItemCreateBooking_Click" />
                     <MenuItem Header="_Editar"  Name="MenuItemEditBooking" Click="MenuItemEditBooking_Click"/>
                     <MenuItem Header="_Cancelar"  Name="MenuItemDeleteBooking" Click="MenuItemDeleteBooking_Click"/>
                 </MenuItem>
                 <MenuItem Header="_Clientes">
+                    <MenuItem Header="Buscar" Name="MenuItemSearchCustomer" Click="MenuItemSearchCustomer_Click" />
                     <MenuItem Header="Crear" Name="MenuItemCreateCustomer" Click="MenuItemCreateCustomer_Click" />
                     <MenuItem Header="Actualizar Datos" Name="MenuItemUpdateCustomer" Click="MenuItemUpdateCustomer_Click"/>
                     <MenuItem Header="Eliminar" Name="MenuItemDeletecustomer" Click="MenuItemDeletecustomer_Click" />
+                </MenuItem>
+                <MenuItem Header="_Mesas">
+                    <MenuItem Header="Buscar" Name="MenuItemSearchTable" Click="MenuItemSearchTable_Click" />
+                    <MenuItem Header="Crear" Name="MenuItemCreateTable" Click="MenuItemCreateTable_Click" />
+                    <MenuItem Header="Actualizar Datos" Name="MenuItemUpdateUpdateTable" Click="MenuItemUpdateUpdateTable_Click"/>
+                    <MenuItem Header="Eliminar" Name="MenuItemDeleteTable" Click="MenuItemDeleteTable_Click" />
                 </MenuItem>
             </Menu>
             <StackPanel></StackPanel>

@@ -1,6 +1,5 @@
 ﻿using AdvancedTechniques.UP.Business.Model;
 using AdvancedTechniques.UP.Services;
-using AdvancedTechniquesUP.Desktop.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,13 +19,14 @@ namespace AdvancedTechniquesUP.Desktop
     /// <summary>
     /// Interaction logic for CreateCustomer.xaml
     /// </summary>
-    public partial class CreateCustomer : Window, ICreateCustomer
+    public partial class CreateCustomer : Window, IModalWindow
     {
         private ICustomerService customerService;
 
         public CreateCustomer(ICustomerService customerService)
         {
             InitializeComponent();
+            
             this.customerService = customerService;
         }
 
@@ -41,6 +41,16 @@ namespace AdvancedTechniquesUP.Desktop
             };
 
             this.customerService.Add(customer);
+
+            this.DialogResult = true;
+        }
+
+        public void Clear() 
+        {
+            txtFirstName.Text = string.Empty;
+            txtLastName.Text = string.Empty;
+            txtPhone.Text = string.Empty;
+            txtEmail.Text = string.Empty;
         }
     }
 }

@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AdvancedTechniquesUP.Desktop.Interfaces
+namespace AdvancedTechniquesUP.Desktop
 {
-    public interface ICreateCustomer
+    public interface IModalWindow
     {
-        void Show();
+        void Clear();
     }
 }

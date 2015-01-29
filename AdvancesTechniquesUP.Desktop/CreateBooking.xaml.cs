@@ -17,11 +17,16 @@ namespace AdvancedTechniquesUP.Desktop
     /// <summary>
     /// Interaction logic for CreateBooking.xaml
     /// </summary>
-    public partial class CreateBooking : Window
+    public partial class CreateBooking : Window, IModalWindow
     {
         public CreateBooking()
         {
             InitializeComponent();
+        }
+
+        public void Clear()
+        {
+            throw new NotImplementedException();
         }
     }
 }

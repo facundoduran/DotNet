@@ -45,6 +45,7 @@ namespace AdvancedTechniquesUP.Desktop
             this.bookingService = bookingService;
             this.tableService = tableService;
 
+            this.searchCustomersForm = new SearchCustomers();
             this.createCustomerForm = new CreateCustomer(this.customerService);
         }
 
@@ -55,29 +56,15 @@ namespace AdvancedTechniquesUP.Desktop
 
         private void MenuItemCreateBooking_Click(object sender, RoutedEventArgs e)
         {
-            CreateBooking createBookingWpfForm = new CreateBooking();
-            createBookingWpfForm.ShowDialog();
+            this.ShowModalWindow(this.createBookingWpfForm);
         }
 
         private void MenuItemEditBooking_Click(object sender, RoutedEventArgs e)
         {
+            this.ShowModalWindow(this.updateBookingForm);
         }
 
         private void MenuItemDeleteBooking_Click(object sender, RoutedEventArgs e)
-        {
-        }
-
-        private void BtnCreateBooking_Click(object sender, RoutedEventArgs e)
-        {
-            CreateBooking createBookingWpfForm = new CreateBooking();
-            createBookingWpfForm.Show();
-        }
-
-        private void BtnEditBooking_Click(object sender, RoutedEventArgs e)
-        {
-        }
-
-        private void BtnDeleteBooking_Click(object sender, RoutedEventArgs e)
         {
         }
 
@@ -88,6 +75,7 @@ namespace AdvancedTechniquesUP.Desktop
 
         private void MenuItemUpdateCustomer_Click(object sender, RoutedEventArgs e)
         {
+            this.ShowModalWindow(this.updateCustomerForm);
         }
 
         private void MenuItemDeletecustomer_Click(object sender, RoutedEventArgs e)
@@ -96,27 +84,23 @@ namespace AdvancedTechniquesUP.Desktop
 
         private void MenuItemSearchCustomer_Click(object sender, RoutedEventArgs e)
         {
-
+            this.ShowModalWindow(this.searchCustomersForm);
         }
 
         private void MenuItemSearchTable_Click(object sender, RoutedEventArgs e)
         {
-
         }
 
         private void MenuItemCreateTable_Click(object sender, RoutedEventArgs e)
         {
-
         }
 
         private void MenuItemUpdateUpdateTable_Click(object sender, RoutedEventArgs e)
         {
-
         }
 
         private void MenuItemDeleteTable_Click(object sender, RoutedEventArgs e)
         {
-
         }
 
         private void ShowModalWindow(Window window) 

@@ -17,11 +17,30 @@ namespace AdvancedTechniquesUP.Desktop
     /// <summary>
     /// Interaction logic for SearchCustomers.xaml
     /// </summary>
-    public partial class SearchCustomers : Window
+    public partial class SearchCustomers : Window, IModalWindow
     {
         public SearchCustomers()
         {
             InitializeComponent();
+        }
+
+        public void Clear()
+        {
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BtnBuscar_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void EditClient_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

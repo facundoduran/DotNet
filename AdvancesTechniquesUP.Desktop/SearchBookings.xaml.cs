@@ -17,11 +17,16 @@ namespace AdvancedTechniquesUP.Desktop
     /// <summary>
     /// Interaction logic for SearchBookings.xaml
     /// </summary>
-    public partial class SearchBookings : Window
+    public partial class SearchBookings : Window, IModalWindow
     {
         public SearchBookings()
         {
             InitializeComponent();
+        }
+
+        public void Clear()
+        {
+            throw new NotImplementedException();
         }
     }
 }

@@ -1,8 +1,60 @@
 ﻿<Window x:Class="AdvancedTechniquesUP.Desktop.SearchCustomers"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="SearchCustomers" Height="300" Width="300">
-    <Grid>
-        
+        xmlns:xcdg="http://schemas.xceed.com/wpf/xaml/datagrid"        
+        Title="SearchCustomers" Height="328.195" Width="544.737">
+    <Grid Margin="0,0,0,13">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="43"/>
+            <RowDefinition Height="42"/>
+            <RowDefinition Height="127"/>
+
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="81*"/>
+            <ColumnDefinition Width="130*"/>
+            <ColumnDefinition Width="92*"/>
+            <ColumnDefinition Width="113*"/>
+            <ColumnDefinition Width="121*"/>
+        </Grid.ColumnDefinitions>
+
+        <xcdg:DataGridControl Name="customersGrid" Margin="10,10,10,-102" Grid.Row="6" Grid.ColumnSpan="5">
+            <xcdg:DataGridControl.View>
+                <xcdg:TableView ColumnStretchMode="All" UseDefaultHeadersFooters="False" ShowScrollTip="True" ShowRowSelectorPane="False">
+                    <xcdg:TableView.FixedHeaders>
+                        <DataTemplate>
+                            <xcdg:ColumnManagerRow />
+                        </DataTemplate>
+                    </xcdg:TableView.FixedHeaders>
+                </xcdg:TableView>
+            </xcdg:DataGridControl.View>
+            <xcdg:DataGridControl.Columns>
+                <xcdg:Column FieldName="CustomerId" IsMainColumn="True" Title="CustomerId"/>
+                <xcdg:Column FieldName="FirstName" IsMainColumn="True" Title="First Name"/>
+                <xcdg:Column FieldName="LastName" IsMainColumn="True" Title="Last Name"/>
+                <xcdg:Column FieldName="Telephone" IsMainColumn="True" Title="Telephone"/>
+                <xcdg:Column FieldName="Email" IsMainColumn="True" Title="Email"/>
+                <xcdg:Column FieldName="Accion" Title="Accion">
+                    <xcdg:Column.CellContentTemplate>
+                        <DataTemplate>
+                            <Button Name="EditClient" Content="Ver Cliente" BorderThickness="0" Background="White" Click="EditClient_Click"/>
+                        </DataTemplate>
+                    </xcdg:Column.CellContentTemplate>
+                </xcdg:Column>
+            </xcdg:DataGridControl.Columns>
+        </xcdg:DataGridControl>
+        <Label Content="Nombre:" HorizontalAlignment="Left" Margin="10,7,0,0" Grid.Row="4" VerticalAlignment="Top" Width="92" Height="26" Grid.ColumnSpan="2"/>
+        <Label Content="Apellido:" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="5" VerticalAlignment="Top" Width="92" Height="26" Grid.ColumnSpan="2"/>
+        <Label Content="Telefono:" Grid.Column="2" HorizontalAlignment="Left" Margin="10,6,0,0" Grid.Row="4" VerticalAlignment="Top" RenderTransformOrigin="0.007,-0.12" Width="83" Height="26" Grid.ColumnSpan="2"/>
+        <Label Content="Email:" Grid.Column="2" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="5" VerticalAlignment="Top" Width="83" Height="26" Grid.ColumnSpan="2"/>
+        <Button Name="BtnBuscar" Content="Buscar" Grid.Column="4" HorizontalAlignment="Left" Margin="22,9,0,0" Grid.Row="4" VerticalAlignment="Top" Width="75" Height="22" Click="BtnBuscar_Click"/>
+        <TextBox Name="txtFirstName" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="10,12,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110" Grid.Row="4"/>
+        <TextBox Name="txtLastName" Grid.Column="3" HorizontalAlignment="Left" Height="23" Margin="10,12,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="93" Grid.Row="4"/>
+        <TextBox Name="txtTelephone" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" Grid.Row="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="110"/>
+        <TextBox Name="txtEmail" Grid.Column="3" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" Grid.Row="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="93"/>
     </Grid>
 </Window>

@@ -49,11 +49,9 @@ namespace AdvancedTechniques.UP.Services
 
         public Customer GetById(int entityId) 
         {
-            IRepository<Customer> customerRepository = new Repository<Customer>(this.unitOfWork);
-
             Expression<Func<Customer, bool>> criteria = x => x.CustomerId == entityId;
 
-            var searchResult = customerRepository.Find(criteria);
+            var searchResult = this.Find(criteria);
 
             return searchResult.FirstOrDefault();
         }
@@ -67,11 +65,17 @@ namespace AdvancedTechniques.UP.Services
 
         public IList<Customer> GetCustomerByName(string customerName)
         {
-            IRepository<Customer> customerRepository = new Repository<Customer>(this.unitOfWork);
-
             Expression<Func<Customer, bool>> criteria = x => x.LastName.Contains(customerName);
 
-            return customerRepository.Find(criteria).ToList();
+            return this.Find(criteria).ToList();
+        }
+
+
+        public IEnumerable<Customer> Find(Expression<Func<Customer, bool>> criteria)
+        {
+            IRepository<Customer> customerRepository = new Repository<Customer>(this.unitOfWork);
+
+            return customerRepository.Find(criteria);
         }
     }
 }

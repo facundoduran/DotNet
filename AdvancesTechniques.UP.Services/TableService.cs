@@ -98,5 +98,15 @@ namespace AdvancedTechniques.UP.Services
 
             return searchResult.FirstOrDefault();
         }
+
+
+        public IEnumerable<Table> Find(Expression<Func<Table, bool>> criteria)
+        {
+            IRepository<Table> customerRepository = new Repository<Table>(this.unitOfWork);
+
+            var searchResult = customerRepository.Find(criteria);
+
+            return searchResult;
+        }
     }
 }

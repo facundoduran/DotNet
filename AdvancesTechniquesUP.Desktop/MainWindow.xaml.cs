@@ -45,7 +45,7 @@ namespace AdvancedTechniquesUP.Desktop
             this.bookingService = bookingService;
             this.tableService = tableService;
 
-            this.searchCustomersForm = new SearchCustomers();
+            this.searchCustomersForm = new SearchCustomers(this.customerService);
             this.createCustomerForm = new CreateCustomer(this.customerService);
         }
 

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -17,5 +18,7 @@ namespace AdvancedTechniques.UP.Services
         T GetById(int entityId);
 
         IEnumerable<T> GetAll();
+
+        IEnumerable<T> Find(Expression<Func<T, bool>> criteria);
     }
 }

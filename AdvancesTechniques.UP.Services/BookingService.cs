@@ -97,5 +97,15 @@ namespace AdvancedTechniques.UP.Services
 
             return repository.Find(criteria).ToList();
         }
+
+
+        public IEnumerable<Booking> Find(Expression<Func<Booking, bool>> criteria)
+        {
+            IRepository<Booking> repository = new Repository<Booking>(this.unitOfWork);
+
+            var searchResult = repository.Find(criteria);
+
+            return searchResult;
+        }
     }
 }

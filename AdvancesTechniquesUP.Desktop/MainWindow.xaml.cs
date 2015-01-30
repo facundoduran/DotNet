@@ -75,11 +75,12 @@ namespace AdvancedTechniquesUP.Desktop
 
         private void MenuItemUpdateCustomer_Click(object sender, RoutedEventArgs e)
         {
-            this.ShowModalWindow(this.updateCustomerForm);
+            this.ShowModalWindow(this.searchCustomersForm);
         }
 
         private void MenuItemDeletecustomer_Click(object sender, RoutedEventArgs e)
         {
+            this.ShowModalWindow(this.searchCustomersForm);
         }
 
         private void MenuItemSearchCustomer_Click(object sender, RoutedEventArgs e)

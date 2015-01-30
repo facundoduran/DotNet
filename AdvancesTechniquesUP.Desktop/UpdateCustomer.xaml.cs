@@ -1,4 +1,6 @@
-﻿using System;
+﻿using AdvancedTechniques.UP.Business.Model;
+using AdvancedTechniques.UP.Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,11 +19,49 @@ namespace AdvancedTechniquesUP.Desktop
     /// <summary>
     /// Interaction logic for UpdateCustomer.xaml
     /// </summary>
-    public partial class UpdateCustomer : Window
+    public partial class UpdateCustomer : Window, IModalWindow
     {
-        public UpdateCustomer()
+        private Customer customer { get; set; }
+
+        private ICustomerService customerService;
+
+        public UpdateCustomer(Customer customer, ICustomerService customerService)
         {
             InitializeComponent();
+
+            this.customer = customer;
+            this.customerService = customerService;
+        }
+
+        public void FillControls() 
+        {
+            if (this.customer != null)
+            {
+                this.txtFirstName.Text = this.customer.FirstName;
+                this.txtLastName.Text = this.customer.LastName;
+                this.txtPhone.Text = this.customer.Telephone;
+                this.txtEmail.Text = this.customer.Email;   
+            }
+        }
+
+        private void btnUpdateCustomer_Click(object sender, RoutedEventArgs e)
+        {
+            this.customer.FirstName = this.txtFirstName.Text;
+            this.customer.LastName = this.txtLastName.Text;
+            this.customer.Telephone = this.txtPhone.Text;
+            this.customer.Email = txtEmail.Text;
+
+            this.customerService.Edit(this.customer);
+
+            this.DialogResult = true;
+        }
+
+        public void Clear()
+        {
+            txtFirstName.Text = string.Empty;
+            txtLastName.Text = string.Empty;
+            txtPhone.Text = string.Empty;
+            txtEmail.Text = string.Empty;
         }
     }
 }

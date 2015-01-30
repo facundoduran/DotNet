@@ -45,6 +45,13 @@
                         </DataTemplate>
                     </xcdg:Column.CellContentTemplate>
                 </xcdg:Column>
+                <xcdg:Column FieldName="Eliminar" Title="">
+                    <xcdg:Column.CellContentTemplate>
+                        <DataTemplate>
+                            <Button Name="DeleteClient" Content="Eliminar Cliente" BorderThickness="0" Background="White" Click="DeleteClient_Click"/>
+                        </DataTemplate>
+                    </xcdg:Column.CellContentTemplate>
+                </xcdg:Column>                
             </xcdg:DataGridControl.Columns>
         </xcdg:DataGridControl>
         <Label Content="Nombre:" HorizontalAlignment="Left" Margin="10,7,0,0" Grid.Row="4" VerticalAlignment="Top" Width="92" Height="26" Grid.ColumnSpan="2"/>

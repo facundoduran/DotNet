@@ -68,16 +68,44 @@ namespace AdvancedTechniquesUP.Desktop
                 criteria = criteria.And(x => x.Email == email);
             }
 
-            var customers = this.customerService.Find(criteria);
-
-            this.customersGrid.DataContext = customers;
+            this.customersGrid.ItemsSource = this.customerService.Find(criteria).ToList(); 
         }
 
         private void EditClient_Click(object sender, RoutedEventArgs e)
         {
+            var customer = (Customer)this.customersGrid.SelectedItem;
 
+            UpdateCustomer updateCustomerForm = new UpdateCustomer(customer, this.customerService);
 
-            
+            this.ShowModalWindow(updateCustomerForm);
+
+            updateCustomerForm.FillControls();
+        }
+
+        private void DeleteClient_Click(object sender, RoutedEventArgs e)
+        {
+            var customer = (Customer)this.customersGrid.SelectedItem;
+
+            this.customerService.Delete(customer);
+        }
+
+        private void ShowModalWindow(Window window)
+        {
+            if (window != null)
+            {
+                var modalDialog = (IModalWindow)window;
+                modalDialog.Clear();
+
+                window.Show();
+                window.Closed += CloseModalWindow;
+                this.IsEnabled = false;
+            }
+        }
+
+        private void CloseModalWindow(object sender, EventArgs e)
+        {
+            this.IsEnabled = true;
+            this.customersGrid.ItemsSource = new List<Customer>();
         }
     }
 }

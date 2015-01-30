@@ -35,16 +35,30 @@ namespace AdvancedTechniques.UP.Services
 
         public void Edit(Customer entity)
         {
-            IRepository<Customer> customerRepository = new Repository<Customer>(this.unitOfWork);
-
-            customerRepository.Update(entity);
+            try
+            {
+                IRepository<Customer> customerRepository = new Repository<Customer>(this.unitOfWork);
+                customerRepository.Update(entity);
+                unitOfWork.Commit();
+            }
+            catch (Exception)
+            {
+                unitOfWork.Rollback();
+            }
         }
 
         public void Delete(Customer entity)
         {
-            IRepository<Customer> customerRepository = new Repository<Customer>(this.unitOfWork);
-
-            customerRepository.Remove(entity);
+            try 
+	        {
+                IRepository<Customer> customerRepository = new Repository<Customer>(this.unitOfWork);
+                customerRepository.Remove(entity);
+                unitOfWork.Commit();
+	        }
+            catch (Exception)
+            {
+                unitOfWork.Rollback();
+            }
         }
 
         public Customer GetById(int entityId) 

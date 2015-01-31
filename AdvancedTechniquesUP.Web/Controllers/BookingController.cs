@@ -1,5 +1,6 @@
 ﻿using AdvancedTechniques.UP.Business.Model;
 using AdvancedTechniques.UP.Business.ViewModel;
+using AdvancedTechniques.UP.Common.Utils;
 using AdvancedTechniques.UP.Services;
 using System;
 using System.Collections.Generic;
@@ -49,6 +50,7 @@ namespace AdvancedTechniques.Web.Controllers
             if (ModelState.IsValid)
             {
                 Table table = this.tableService.GetAvailableTable(booking.FromTime.Value, booking.ToTime.Value, booking.DinersQuantity);
+                string bookingCode = BookingCodeGenerator.GetBookingCode();
 
                 Customer customer = new Customer
                 {
@@ -62,6 +64,7 @@ namespace AdvancedTechniques.Web.Controllers
                 {
                     Booking newBooking = new Booking()
                     {
+                        Code = bookingCode,
                         Customer = customer,
                         FromTime = booking.FromTime.Value,
                         ToTime = booking.ToTime.Value,
@@ -70,9 +73,9 @@ namespace AdvancedTechniques.Web.Controllers
                     };
 
                     this.bookingService.Add(newBooking);
-                }
 
-                return Json( new { msg = "Success" }, JsonRequestBehavior.AllowGet);
+                    return Json(new { msg = "Success", code = bookingCode }, JsonRequestBehavior.AllowGet);
+                }
             }
 
             return View(booking);

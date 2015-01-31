@@ -24,6 +24,8 @@ namespace AdvancedTechniques.UP.Business.Model
 
         public SalesChannel salesChannel { get; set; }
 
+        public string Code { get; set; }
+
         public bool IsOverlap(DateTime fromTime, DateTime toTime) 
         {
             /*

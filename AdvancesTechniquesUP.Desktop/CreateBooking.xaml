@@ -1,8 +1,35 @@
 ﻿<Window x:Class="AdvancedTechniquesUP.Desktop.CreateBooking"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="CreateBooking" Height="300" Width="300">
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit" 
+        Title="CreateBooking" Height="252.632" Width="407.143">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto" MinHeight="43"/>
+            <RowDefinition Height="Auto" MinHeight="41"/>
+            <RowDefinition Height="Auto" MinHeight="37"/>
+            <RowDefinition Height="43"/>
+            <RowDefinition Height="52"/>
+            <RowDefinition Height="49"/>
+
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="122*"/>
+            <ColumnDefinition Width="202*"/>
+            <ColumnDefinition Width="75*"/>
+        </Grid.ColumnDefinitions>
+        <Label Name="lblCustomer" Content="Cliente: " FontSize="10" Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="10,10,60,0" Height="23" Width="52"></Label>
+
+        <Label x:Name="lblTable" Content="Mesa: " FontSize="10" Grid.Row="2" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="10,10,60,0" Height="23" Width="52"/>
+        <Label x:Name="lblFrom" Content="Desde: " FontSize="10" Grid.Row="3" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="10,10,60,0" Height="23" Width="52"/>
+        <Label x:Name="lblTo" Content="Hasta: " FontSize="10" Grid.Row="4" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="10,10,60,0" Height="23" Width="52"/>
+        <TextBox x:Name="txtCustomer" IsEnabled="False" Grid.Column="1" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="175" Grid.Row="1" Margin="10,10,0,0"/>
+        <TextBox x:Name="txtTable" IsEnabled="False" Grid.Column="1" HorizontalAlignment="Left" Height="23" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="175" Margin="10,10,0,0"/>
+        <xctk:DateTimePicker x:Name="txtFromTime" HorizontalAlignment="Left" Grid.Row="3" Width="175" Margin="10,7,0,5" Grid.Column="1"/>
+        <xctk:DateTimePicker x:Name="txtToTime" HorizontalAlignment="Left" Grid.Row="4" Width="175" Margin="10,10,0,10" Grid.Column="1"/>
+        <Button x:Name="btnSearchCustomer" Content="Buscar" Grid.Column="2" HorizontalAlignment="Left" Margin="10,0,0,11" Grid.Row="2" VerticalAlignment="Bottom" Width="55" Height="21" Click="btnSearchCustomer_Click"/>
+        <Button x:Name="btnSearchTable" Content="Buscar" Grid.Column="2" HorizontalAlignment="Left" Margin="10,0,0,11" Grid.Row="1" VerticalAlignment="Bottom" Width="55" Height="21" Click="btnSearchTable_Click"/>
+        <Button x:Name="btnCreatBooking" Content="Crear" Grid.Column="1" HorizontalAlignment="Left" Margin="192,0,0,10" Grid.Row="5" VerticalAlignment="Bottom" Width="75" Height="21" Click="btnCreatBooking_Click" Grid.ColumnSpan="2"/>
     </Grid>
 </Window>

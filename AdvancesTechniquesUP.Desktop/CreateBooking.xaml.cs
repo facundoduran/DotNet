@@ -1,4 +1,6 @@
-﻿using AdvancedTechniques.UP.Services;
+﻿using AdvancedTechniques.UP.Business.ViewModel;
+using AdvancedTechniques.UP.Common.Helper;
+using AdvancedTechniques.UP.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -42,6 +44,11 @@ namespace AdvancedTechniquesUP.Desktop
 
         private void btnCreatBooking_Click(object sender, RoutedEventArgs e)
         {
+            BookingViewModel bookingViewModel = new BookingViewModel()
+            {
+            };
+
+            var isValid = ValidationHelper.ValidateEntity<BookingViewModel>(bookingViewModel);
 
         }
 

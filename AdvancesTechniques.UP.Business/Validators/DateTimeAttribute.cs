@@ -13,7 +13,7 @@ namespace AdvancesTechniques.UP.Business.Validators
         {
             DateTime dtout;
 
-            if (DateTime.TryParse(value.ToString(), out dtout))
+            if (value != null && DateTime.TryParse(value.ToString(), out dtout))
             {
                 return ValidationResult.Success;
             }

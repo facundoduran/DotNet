@@ -2,7 +2,7 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit" 
-        Title="CreateBooking" Height="252.632" Width="407.143">
+        Title="CreateBooking" Height="301.128" Width="407.143">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -28,8 +28,20 @@
         <TextBox x:Name="txtTable" IsEnabled="False" Grid.Column="1" HorizontalAlignment="Left" Height="23" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="175" Margin="10,10,0,0"/>
         <xctk:DateTimePicker x:Name="txtFromTime" HorizontalAlignment="Left" Grid.Row="3" Width="175" Margin="10,7,0,5" Grid.Column="1"/>
         <xctk:DateTimePicker x:Name="txtToTime" HorizontalAlignment="Left" Grid.Row="4" Width="175" Margin="10,10,0,10" Grid.Column="1"/>
+        <TextBox x:Name="txtDinnerQuantity" Grid.Column="1" HorizontalAlignment="Left" Height="23" Grid.Row="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="175" Margin="10,10,0,0">
+            <Validation.ErrorTemplate>
+                <ControlTemplate>
+                    <StackPanel>
+                        <!-- Placeholder for the TextBox itself -->
+                        <AdornedElementPlaceholder x:Name="textBox"/>
+                        <TextBlock Text="{Binding [0].ErrorContent}" Foreground="Red"/>
+                    </StackPanel>
+                </ControlTemplate>
+            </Validation.ErrorTemplate>
+        </TextBox>
         <Button x:Name="btnSearchCustomer" Content="Buscar" Grid.Column="2" HorizontalAlignment="Left" Margin="10,0,0,11" Grid.Row="2" VerticalAlignment="Bottom" Width="55" Height="21" Click="btnSearchCustomer_Click"/>
         <Button x:Name="btnSearchTable" Content="Buscar" Grid.Column="2" HorizontalAlignment="Left" Margin="10,0,0,11" Grid.Row="1" VerticalAlignment="Bottom" Width="55" Height="21" Click="btnSearchTable_Click"/>
-        <Button x:Name="btnCreatBooking" Content="Crear" Grid.Column="1" HorizontalAlignment="Left" Margin="192,0,0,10" Grid.Row="5" VerticalAlignment="Bottom" Width="75" Height="21" Click="btnCreatBooking_Click" Grid.ColumnSpan="2"/>
+        <Button x:Name="btnCreatBooking" Content="Crear" Grid.Column="2" HorizontalAlignment="Left" Margin="0,0,0,10" Grid.Row="6" VerticalAlignment="Bottom" Width="75" Height="21" Click="btnCreatBooking_Click"/>
+        <Label x:Name="lblDinnerQuantity" Content="Comenzales:" HorizontalAlignment="Left" Height="28" Margin="10,10,0,0" Grid.Row="5" VerticalAlignment="Top" Width="83"/>
     </Grid>
 </Window>

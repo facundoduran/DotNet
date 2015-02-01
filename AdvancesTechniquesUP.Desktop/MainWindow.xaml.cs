@@ -28,7 +28,7 @@ namespace AdvancedTechniquesUP.Desktop
 
         #region Forms 
         
-        private CreateBooking createBookingWpfForm;
+        private CreateBooking createBookingForm;
         private CreateCustomer createCustomerForm;
         private SearchBookings searchBookingsForm;
         private SearchCustomers searchCustomersForm;
@@ -47,6 +47,7 @@ namespace AdvancedTechniquesUP.Desktop
 
             this.searchCustomersForm = new SearchCustomers(this.customerService);
             this.createCustomerForm = new CreateCustomer(this.customerService);
+            this.createBookingForm = new CreateBooking(this.bookingService, this.customerService, this.tableService);
         }
 
         private void MenuItemSearchBooking_Click(object sender, RoutedEventArgs e)
@@ -56,7 +57,7 @@ namespace AdvancedTechniquesUP.Desktop
 
         private void MenuItemCreateBooking_Click(object sender, RoutedEventArgs e)
         {
-            this.ShowModalWindow(this.createBookingWpfForm);
+            this.ShowModalWindow(this.createBookingForm);
         }
 
         private void MenuItemEditBooking_Click(object sender, RoutedEventArgs e)

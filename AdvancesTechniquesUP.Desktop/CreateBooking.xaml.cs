@@ -3,19 +3,10 @@ using AdvancedTechniques.UP.Common.Helper;
 using AdvancedTechniques.UP.Common.Extensions;
 using AdvancedTechniques.UP.Services;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using AdvancedTechniques.UP.Common.Utils;
+using AdvancedTechniques.UP.Business.Model;
 
 namespace AdvancedTechniquesUP.Desktop
 {
@@ -49,17 +40,31 @@ namespace AdvancedTechniquesUP.Desktop
 
         private void btnCreatBooking_Click(object sender, RoutedEventArgs e)
         {
-            var customerId = txtCustomer.Text;
+            int customerId;
+            Int32.TryParse(this.txtCustomer.Text, out customerId);
+
             var fromTime = txtFromTime.Text.ParseDateTime();
             var toTime = txtFromTime.Text.ParseDateTime();
             var dinnersQuantity = txtDinnerQuantity.Value.HasValue ? (byte)txtDinnerQuantity.Value : 0;
 
+            var customer = this.customerService.GetById(customerId);
 
-
+            CustomerViewModel customerViewModel = new CustomerViewModel();
+                
+            if (customer != null)
+	        {
+		        customerViewModel = new CustomerViewModel()
+                {
+                    FirstName = customer.FirstName,
+                    LastName = customer.LastName,
+                    Telephone = customer.Telephone,
+                    Email = customer.Email
+                };
+	        }
 
             BookingViewModel bookingViewModel = new BookingViewModel()
             {   
-                
+                Customer = customerViewModel,
                 FromTime = fromTime,
                 ToTime = toTime,
                 DinersQuantity = dinnersQuantity,
@@ -68,6 +73,26 @@ namespace AdvancedTechniquesUP.Desktop
 
             var validationErrors = ValidationHelper.ValidateEntity<BookingViewModel>(bookingViewModel);
 
+            if (!validationErrors.HasError)
+            {
+                Table table = this.tableService.GetAvailableTable(fromTime.Value, toTime.Value, dinnersQuantity);
+                if (table != null)
+                {
+                    Booking newBooking = new Booking()
+                    {
+                        Customer = customer,
+                        FromTime = fromTime.Value,
+                        ToTime = toTime.Value,
+                        salesChannel = SalesChannel.Web,
+                        Table = table
+                    };
+
+                    this.bookingService.Add(newBooking);
+
+                    this.DialogResult = true;
+                }
+            }
+
             this.ShowErrors(validationErrors);
         }
 
@@ -75,16 +100,10 @@ namespace AdvancedTechniquesUP.Desktop
         {
             var formmatedErrors = validationErrors.Errors.Select(x => string.Format("* {0} {1}", x.ErrorMessage, System.Environment.NewLine));
 
-            if (validationErrors.HasError)
-            {
-                lblErrors.Visibility = Visibility.Visible;
-                lblShowErrors.Visibility = Visibility.Visible;
-                lblShowErrors.Content = string.Join(string.Empty, formmatedErrors);
-            }
-            else
-            {
-                this.DialogResult = true;
-            }
+            lblErrors.Visibility = Visibility.Visible;
+            lblShowErrors.Visibility = Visibility.Visible;
+            lblShowErrors.Content = string.Join(string.Empty, formmatedErrors);
+
         }
 
         private void btnSearchTable_Click(object sender, RoutedEventArgs e)

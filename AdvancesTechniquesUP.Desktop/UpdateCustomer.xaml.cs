@@ -63,5 +63,12 @@ namespace AdvancedTechniquesUP.Desktop
             txtPhone.Text = string.Empty;
             txtEmail.Text = string.Empty;
         }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            this.DialogResult = false;
+            this.Visibility = Visibility.Hidden;
+            e.Cancel = true;
+        }
     }
 }

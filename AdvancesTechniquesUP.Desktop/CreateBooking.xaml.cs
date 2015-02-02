@@ -1,5 +1,6 @@
 ﻿using AdvancedTechniques.UP.Business.ViewModel;
 using AdvancedTechniques.UP.Common.Helper;
+using AdvancedTechniques.UP.Common.Extensions;
 using AdvancedTechniques.UP.Services;
 using System;
 using System.Collections.Generic;
@@ -14,6 +15,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using AdvancedTechniques.UP.Common.Utils;
 
 namespace AdvancedTechniquesUP.Desktop
 {
@@ -40,16 +42,49 @@ namespace AdvancedTechniquesUP.Desktop
             this.txtTable.Text = string.Empty;
             this.txtFromTime.Text = string.Empty;
             this.txtToTime.Text = string.Empty;
+
+            this.lblErrors.Visibility = Visibility.Hidden;
+            this.lblShowErrors.Visibility = Visibility.Hidden;
         }
 
         private void btnCreatBooking_Click(object sender, RoutedEventArgs e)
         {
+            var customerId = txtCustomer.Text;
+            var fromTime = txtFromTime.Text.ParseDateTime();
+            var toTime = txtFromTime.Text.ParseDateTime();
+            var dinnersQuantity = txtDinnerQuantity.Value.HasValue ? (byte)txtDinnerQuantity.Value : 0;
+
+
+
+
             BookingViewModel bookingViewModel = new BookingViewModel()
-            {
+            {   
+                
+                FromTime = fromTime,
+                ToTime = toTime,
+                DinersQuantity = dinnersQuantity,
+                salesChannel = AdvancedTechniques.UP.Business.Model.SalesChannel.Desktop
             };
 
-            var isValid = ValidationHelper.ValidateEntity<BookingViewModel>(bookingViewModel);
+            var validationErrors = ValidationHelper.ValidateEntity<BookingViewModel>(bookingViewModel);
 
+            this.ShowErrors(validationErrors);
+        }
+
+        private void ShowErrors(EntityValidationResult validationErrors) 
+        {
+            var formmatedErrors = validationErrors.Errors.Select(x => string.Format("* {0} {1}", x.ErrorMessage, System.Environment.NewLine));
+
+            if (validationErrors.HasError)
+            {
+                lblErrors.Visibility = Visibility.Visible;
+                lblShowErrors.Visibility = Visibility.Visible;
+                lblShowErrors.Content = string.Join(string.Empty, formmatedErrors);
+            }
+            else
+            {
+                this.DialogResult = true;
+            }
         }
 
         private void btnSearchTable_Click(object sender, RoutedEventArgs e)
@@ -60,6 +95,13 @@ namespace AdvancedTechniquesUP.Desktop
         private void btnSearchCustomer_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            this.DialogResult = false;
+            this.Visibility = Visibility.Hidden;
+            e.Cancel = true;
         }
     }
 }

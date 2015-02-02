@@ -20,7 +20,7 @@ namespace AdvancesTechniques.UP.Business.Validators
 
             var errorMessage = FormatErrorMessage(validationContext.DisplayName);
 
-            return new ValidationResult(errorMessage);
+            return new ValidationResult(errorMessage, new string[] { validationContext.MemberName });
         }
     }
 }

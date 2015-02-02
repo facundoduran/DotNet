@@ -13,13 +13,14 @@ namespace AdvancedTechniques.UP.Business.ViewModel
     {
         public int Id { get; set; }
 
-        [DateTimeAttribute(ErrorMessage = "The field check in mus be a date")]
+        [DateTimeAttribute(ErrorMessage = "The field check in must be a date")]
         public DateTime? FromTime { get; set; }
 
-        [DateTimeAttribute(ErrorMessage = "The field check out mus be a date")]
+        [DateTimeAttribute(ErrorMessage = "The field check out must be a date")]
         [DateEqualTo("FromTime", "The field check out must be the equal than Check-in")]
         public DateTime? ToTime { get; set; }
 
+        [Required(ErrorMessage = "The field customer is required")]
         public CustomerViewModel Customer { get; set; }
 
         [Required]

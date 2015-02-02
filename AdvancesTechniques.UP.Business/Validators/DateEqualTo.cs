@@ -25,10 +25,10 @@ namespace AdvancesTechniques.UP.Business.Validators
 
                 if (otherPropertyInfo.PropertyType.Equals(typeof(DateTime?)))
                 {
-                    DateTime toValidate = (DateTime)value;
-                    DateTime referenceProperty = (DateTime)otherPropertyInfo.GetValue(validationContext.ObjectInstance, null);
+                    DateTime? toValidate = (DateTime?)value;
+                    DateTime? referenceProperty = (DateTime?)otherPropertyInfo.GetValue(validationContext.ObjectInstance, null);
 
-                    bool datesAreEqual = toValidate.Date != null && toValidate.Date.CompareTo(referenceProperty.Date) == 0;
+                    bool datesAreEqual = toValidate.HasValue && referenceProperty.HasValue && toValidate.Value.CompareTo(referenceProperty.Value) == 0;
 
                     if (datesAreEqual)
                     {
@@ -49,7 +49,7 @@ namespace AdvancesTechniques.UP.Business.Validators
 
             var errorMessage = FormatErrorMessage("Error");
 
-            return new ValidationResult(errorMessage);
+            return new ValidationResult(errorMessage, new string[] { validationContext.MemberName });
         }
     }
 }

@@ -54,11 +54,11 @@
                 </xcdg:Column>                
             </xcdg:DataGridControl.Columns>
         </xcdg:DataGridControl>
-        <Label Content="Nombre:" HorizontalAlignment="Left" Margin="10,7,0,0" Grid.Row="4" VerticalAlignment="Top" Width="92" Height="26" Grid.ColumnSpan="2"/>
-        <Label Content="Telefono:" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="5" VerticalAlignment="Top" Width="92" Height="26" Grid.ColumnSpan="2"/>
-        <Label Content="Apellido:" Grid.Column="2" HorizontalAlignment="Left" Margin="10,6,0,0" Grid.Row="4" VerticalAlignment="Top" RenderTransformOrigin="0.007,-0.12" Width="83" Height="26" Grid.ColumnSpan="2"/>
+        <Label Content="First Name:" HorizontalAlignment="Left" Margin="10,7,0,0" Grid.Row="4" VerticalAlignment="Top" Width="92" Height="26" Grid.ColumnSpan="2"/>
+        <Label Content="Telephone:" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="5" VerticalAlignment="Top" Width="92" Height="26" Grid.ColumnSpan="2"/>
+        <Label Content="Last Name:" Grid.Column="2" HorizontalAlignment="Left" Margin="10,6,0,0" Grid.Row="4" VerticalAlignment="Top" RenderTransformOrigin="0.007,-0.12" Width="83" Height="26" Grid.ColumnSpan="2"/>
         <Label Content="Email:" Grid.Column="2" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="5" VerticalAlignment="Top" Width="83" Height="26" Grid.ColumnSpan="2"/>
-        <Button Name="BtnBuscar" Content="Buscar" Grid.Column="4" HorizontalAlignment="Left" Margin="22,9,0,0" Grid.Row="4" VerticalAlignment="Top" Width="75" Height="22" Click="BtnBuscar_Click"/>
+        <Button Name="BtnBuscar" Content="Search" Grid.Column="4" HorizontalAlignment="Left" Margin="22,9,0,0" Grid.Row="4" VerticalAlignment="Top" Width="75" Height="22" Click="BtnBuscar_Click"/>
         <TextBox Name="txtFirstName" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="10,12,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110" Grid.Row="4"/>
         <TextBox Name="txtLastName" Grid.Column="3" HorizontalAlignment="Left" Height="23" Margin="10,12,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="93" Grid.Row="4"/>
         <TextBox Name="txtTelephone" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" Grid.Row="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="110"/>

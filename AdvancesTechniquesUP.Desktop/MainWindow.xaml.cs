@@ -112,15 +112,11 @@ namespace AdvancedTechniquesUP.Desktop
                 var modalDialog = (IModalWindow)window;
                 modalDialog.Clear();
 
-                window.Show();
-                window.Closed += CloseModalWindow;
-                this.IsEnabled = false;
+                if (window.ShowDialog().HasValue)
+                {
+                    this.IsEnabled = true;
+                }
             }
-        }
-
-        private void CloseModalWindow(object sender, EventArgs e)
-        {
-            this.IsEnabled = true;
         }
     }
 }

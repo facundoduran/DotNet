@@ -20,5 +20,10 @@ namespace AdvancedTechniques.UP.Common.Extensions
                 return null;
             }
         }
+
+        public static string ParseString(this DateTime value) 
+        {
+            return value.ToString("dd/MM/yyyy HH:mm");
+        }
     }
 }

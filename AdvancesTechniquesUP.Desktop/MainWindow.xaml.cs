@@ -143,6 +143,8 @@ namespace AdvancedTechniquesUP.Desktop
 
                 this.bookingService.Add(booking);
             }
+
+            System.Configuration.ConfigurationManager.AppSettings.Set("lastSynchronizedDate", DateTime.Now.ParseString());
         }
 
         private void ShowModalWindow(Window window) 

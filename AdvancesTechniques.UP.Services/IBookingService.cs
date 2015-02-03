@@ -13,6 +13,6 @@ namespace AdvancedTechniques.UP.Services
 
         int GetOffersByDay(DateTime date);
 
-        IList<Booking> GetBookingsAfterDate(DateTime date);
+        IList<Booking> GetBookingsBetweenDates(DateTime fromDate, DateTime toDate);
     }
 }

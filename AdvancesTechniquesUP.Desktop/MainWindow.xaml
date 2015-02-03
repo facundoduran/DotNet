@@ -9,6 +9,7 @@
                     <MenuItem Header="Search" Name="MenuItemSearchBooking" Click="MenuItemSearchBooking_Click" />
                     <MenuItem Header="Create" Name="MenuItemCreateBooking" Click="MenuItemCreateBooking_Click" />
                     <MenuItem Header="Edit"  Name="MenuItemEditBooking" Click="MenuItemEditBooking_Click"/>
+                    <MenuItem Header="Synchronize" Name="MenuItemSynchronize" Click="MenuItemSynchronize_Click" />
                 </MenuItem>
                 <MenuItem Header="_Customers">
                     <MenuItem Header="Search" Name="MenuItemSearchCustomer" Click="MenuItemSearchCustomer_Click" />

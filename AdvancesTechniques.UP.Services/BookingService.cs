@@ -89,11 +89,11 @@ namespace AdvancedTechniques.UP.Services
             return searchResult.Count();
         }
 
-        public IList<Booking> GetBookingsAfterDate(DateTime date)
+        public IList<Booking> GetBookingsBetweenDates(DateTime fromDate, DateTime toDate)
         {
             IRepository<Booking> repository = new Repository<Booking>(this.unitOfWork);
 
-            Expression<Func<Booking, bool>> criteria = x => x.FromTime <= date;
+            Expression<Func<Booking, bool>> criteria = x => x.FromTime <= fromDate && x.ToTime <= toDate;
 
             return repository.Find(criteria).ToList();
         }

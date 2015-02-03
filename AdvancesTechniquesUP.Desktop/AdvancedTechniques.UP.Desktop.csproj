@@ -75,6 +75,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
@@ -125,6 +126,11 @@
     </Compile>
     <Compile Include="SearchCustomers.xaml.cs">
       <DependentUpon>SearchCustomers.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\SynchronizeBookings\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="UpdateBooking.xaml.cs">
       <DependentUpon>UpdateBooking.xaml</DependentUpon>
@@ -194,6 +200,16 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
+    <None Include="Service References\SynchronizeBookings\AdvancedTechniquesUP.Desktop.SynchronizeBookings.BookingContract.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SynchronizeBookings\BookingWcfService.wsdl" />
+    <None Include="Service References\SynchronizeBookings\BookingWcfService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SynchronizeBookings\BookingWcfService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">
@@ -251,8 +267,20 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>Restaurant.mdf</DependentUpon>
     </Content>
+    <None Include="Service References\SynchronizeBookings\BookingWcfService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SynchronizeBookings\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\SynchronizeBookings\configuration.svcinfo" />
+    <None Include="Service References\SynchronizeBookings\configuration91.svcinfo" />
+    <None Include="Service References\SynchronizeBookings\BookingWcfService.disco" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\SynchronizeBookings\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="Data\Restaurant.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

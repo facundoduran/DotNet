@@ -1,14 +1,16 @@
-﻿using AdvancedTechniques.UP.Services;
+﻿using AdvancedTechniques.UP.Business.Model;
+using AdvancedTechniques.UP.Common.Extensions;
+using AdvancedTechniques.UP.Services;
 using Microsoft.Practices.Unity;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
@@ -103,6 +105,44 @@ namespace AdvancedTechniquesUP.Desktop
 
         private void MenuItemDeleteTable_Click(object sender, RoutedEventArgs e)
         {
+        }
+
+        private void MenuItemSynchronize_Click(object sender, RoutedEventArgs e)
+        {
+            SynchronizeBookings.BookingWcfServiceClient client = new SynchronizeBookings.BookingWcfServiceClient();
+
+            var lastSynchronized = System.Configuration.ConfigurationManager.AppSettings.Get("lastSynchronizedDate");
+
+            var lastSyncrhonizedDate = lastSynchronized.ParseDateTime().HasValue ? lastSynchronized.ParseDateTime().Value : DateTime.Now;
+
+            var syncrhonizeBookings = client.SynchronizeBookings(lastSyncrhonizedDate);
+
+            foreach (var syncBooking in syncrhonizeBookings)
+            {
+                Table table = new Table{
+                    Capacity = syncBooking.Table.Capacity,
+                    Name = syncBooking.Table.Name
+                };
+
+                Customer customer = new Customer()
+                {
+                    FirstName = syncBooking.Customer.FirstName,
+                    LastName = syncBooking.Customer.LastName,
+                    Telephone = syncBooking.Customer.Telephone,
+                    Email = syncBooking.Customer.Email
+                };
+
+                Booking booking = new Booking()
+                {
+                    Customer = customer,
+                    FromTime = syncBooking.FromTime.Value,
+                    ToTime = syncBooking.ToTime.Value,
+                    Table = table,
+                    salesChannel = SalesChannel.Web
+                };
+
+                this.bookingService.Add(booking);
+            }
         }
 
         private void ShowModalWindow(Window window) 

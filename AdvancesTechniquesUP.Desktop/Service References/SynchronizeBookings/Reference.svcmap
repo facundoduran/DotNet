@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="95444d88-08db-469c-8a74-0ed09b530482" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:5306/Wcf/BookingWcfService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="BookingWcfService.xsd" MetadataType="Schema" ID="fd6e923c-6dd3-4794-b6e9-84e985d3c9d9" SourceId="1" SourceUrl="http://localhost:5306/Wcf/BookingWcfService.svc?xsd=xsd1" />
+    <MetadataFile FileName="BookingWcfService.wsdl" MetadataType="Wsdl" ID="d27c3343-da4a-4c07-b452-3568b556d9be" SourceId="1" SourceUrl="http://localhost:5306/Wcf/BookingWcfService.svc?wsdl" />
+    <MetadataFile FileName="BookingWcfService1.xsd" MetadataType="Schema" ID="7dfeece8-cbca-44fd-b619-ba8ac1c1c9c3" SourceId="1" SourceUrl="http://localhost:5306/Wcf/BookingWcfService.svc?xsd=xsd0" />
+    <MetadataFile FileName="BookingWcfService2.xsd" MetadataType="Schema" ID="7f4fa671-9b46-42c2-ad2a-97b6636ec57e" SourceId="1" SourceUrl="http://localhost:5306/Wcf/BookingWcfService.svc?xsd=xsd2" />
+    <MetadataFile FileName="BookingWcfService.disco" MetadataType="Disco" ID="11ff7a45-4b12-48fd-acc0-3b80669ac632" SourceId="1" SourceUrl="http://localhost:5306/Wcf/BookingWcfService.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

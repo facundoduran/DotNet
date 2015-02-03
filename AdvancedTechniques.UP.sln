@@ -12,37 +12,13 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdvancedTechniquesUP.Test", "AdvancesTechniquesUP.Test\AdvancedTechniquesUP.Test.csproj", "{51B91B86-B2E5-4E60-89DB-C35BDACE3346}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdvancedTechniques.UP.Desktop", "AdvancesTechniquesUP.Desktop\AdvancedTechniques.UP.Desktop.csproj", "{4453D1D2-A337-4101-9DAE-ED2EF22B095E}"
+	ProjectSection(ProjectDependencies) = postProject
+		{0464DFC4-47AD-408C-B09C-81FCA5BFBC79} = {0464DFC4-47AD-408C-B09C-81FCA5BFBC79}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdvancedTechniques.UP.Web", "AdvancedTechniquesUP.Web\AdvancedTechniques.UP.Web.csproj", "{0464DFC4-47AD-408C-B09C-81FCA5BFBC79}"
 EndProject
 Global
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 8
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = https://facundoduran.visualstudio.com/defaultcollection
-		SccLocalPath0 = .
-		SccProjectUniqueName1 = AdvancesTechniques.UP.Business\\AdvancedTechniques.UP.Business.csproj
-		SccProjectName1 = AdvancesTechniques.UP.Business
-		SccLocalPath1 = AdvancesTechniques.UP.Business
-		SccProjectUniqueName2 = AdvancesTechniques.UP.Common\\AdvancedTechniques.UP.Common.csproj
-		SccProjectName2 = AdvancesTechniques.UP.Common
-		SccLocalPath2 = AdvancesTechniques.UP.Common
-		SccProjectUniqueName3 = AdvancesTechniques.UP.Persistence.Sql\\AdvancedTechniques.UP.Persistence.Sql.csproj
-		SccProjectName3 = AdvancesTechniques.UP.Persistence.Sql
-		SccLocalPath3 = AdvancesTechniques.UP.Persistence.Sql
-		SccProjectUniqueName4 = AdvancesTechniques.UP.Services\\AdvancedTechniques.UP.Services.csproj
-		SccProjectName4 = AdvancesTechniques.UP.Services
-		SccLocalPath4 = AdvancesTechniques.UP.Services
-		SccProjectUniqueName5 = AdvancesTechniquesUP.Test\\AdvancedTechniquesUP.Test.csproj
-		SccProjectName5 = AdvancesTechniquesUP.Test
-		SccLocalPath5 = AdvancesTechniquesUP.Test
-		SccProjectUniqueName6 = AdvancesTechniquesUP.Desktop\\AdvancedTechniques.UP.Desktop.csproj
-		SccProjectName6 = AdvancesTechniquesUP.Desktop
-		SccLocalPath6 = AdvancesTechniquesUP.Desktop
-		SccProjectUniqueName7 = AdvancedTechniquesUP.Web\\AdvancedTechniques.UP.Web.csproj
-		SccProjectName7 = AdvancedTechniquesUP.Web
-		SccLocalPath7 = AdvancedTechniquesUP.Web
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU

@@ -22,13 +22,7 @@ namespace AdvancedTechniques.Web.Wcf.DataContracts
         public CustomerContract Customer { get; set; }
 
         [DataMember]
-        public int DinersQuantity { get; set; }
-
-        [DataMember]
-        public int CustomerId { get; set; }
-
-        [DataMember]
-        public int TableId { get; set; }
+        public TableContract Table { get; set; }
 
         [DataMember]
         public SalesChannelContract salesChannel { get; set; }

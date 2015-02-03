@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AdvancedTechniques.Web.Wcf.DataContracts;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
@@ -12,6 +13,6 @@ namespace AdvancedTechniques.Web.Wcf
     public interface IBookingWcfService
     {
         [OperationContract]
-        void GetBookings(DateTime date);
+        IList<BookingContract> SynchronizeBookings(DateTime date);
     }
 }

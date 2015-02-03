@@ -1,4 +1,6 @@
-﻿using AdvancedTechniques.UP.Services;
+﻿using AdvancedTechniques.UP.Business.Model;
+using AdvancedTechniques.UP.Services;
+using AdvancedTechniques.Web.Wcf.DataContracts;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,10 +25,40 @@ namespace AdvancedTechniques.Web.Wcf
             this.tableService = tableService;
         }
 
-        public void GetBookings(DateTime date)
+        public IList<BookingContract> SynchronizeBookings(DateTime date)
         {
-            var allbookings = this.bookingService.GetBookingsAfterDate(date);
+            var bookings = this.bookingService.GetBookingsBetweenDates(date, DateTime.Now);
 
+            IList<BookingContract> bookingContracts = new List<BookingContract>();
+
+            foreach (var booking in bookings)
+            {
+                TableContract tableContract = new TableContract()
+                {                    
+                    Capacity = booking.Table.Capacity,
+                    Name = booking.Table.Name
+                };
+
+                CustomerContract customerContract = new CustomerContract()
+                {
+                    FirstName = booking.Customer.FirstName,
+                    LastName = booking.Customer.LastName,
+                    Telephone = booking.Customer.Telephone,
+                    Email = booking.Customer.Email
+                };
+
+                bookingContracts.Add(
+                    new BookingContract()
+                    {
+                        Customer = customerContract,
+                        Table = tableContract,
+                        FromTime = booking.FromTime,
+                        ToTime = booking.ToTime,
+                        salesChannel = SalesChannelContract.Web
+                    });
+            }
+
+            return bookingContracts;
         }
     }
 }

@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AdvancedTechniques.UP.Common.Extensions;
 
-namespace AdvancesTechniques.UP.Business.Validators
+namespace AdvancedTechniques.UP.Business.Validators
 {
     public class DateEqualTo : ValidationAttribute
     {
@@ -28,11 +30,21 @@ namespace AdvancesTechniques.UP.Business.Validators
                     DateTime? toValidate = (DateTime?)value;
                     DateTime? referenceProperty = (DateTime?)otherPropertyInfo.GetValue(validationContext.ObjectInstance, null);
 
-                    bool datesAreEqual = toValidate.HasValue && referenceProperty.HasValue && toValidate.Value.CompareTo(referenceProperty.Value) == 0;
+                    bool datesAreValid = toValidate.HasValue && referenceProperty.HasValue;
 
-                    if (datesAreEqual)
+                    if (datesAreValid)
                     {
-                        return ValidationResult.Success;
+                        DateTime? fromTime = referenceProperty.Value.ParseString().ParseDateTime();
+                        DateTime? toTime = toValidate.Value.ParseString().ParseDateTime();
+
+                        if (referenceProperty.Value  <= toTime) 
+                        {
+                            return ValidationResult.Success;    
+                        }
+
+                        var dateDifferenceErrorMessage = FormatErrorMessage("The Check-out and Check-in must be lower than four hours");
+
+                        return new ValidationResult(dateDifferenceErrorMessage, new string[] { validationContext.MemberName });
                     }
                 }
                 else

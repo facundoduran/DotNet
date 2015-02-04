@@ -22,7 +22,8 @@ namespace AdvancedTechniques.Web.App_Start
                 "~/Scripts/validateBooking.js",
                 "~/Scripts/jquery.validate.js",
                 "~/Scripts/jquery.validate.unobtrusive.js",
-                "~/Scripts/jquery.validate.date.js"
+                "~/Scripts/jquery.validate.date.js",
+                "~/Scripts/jquery.blockUI.js"
                 );
 
             scriptBundle.Include(

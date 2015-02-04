@@ -4,8 +4,8 @@
     var fromTime = DateTime.Now.ToString("dd/MM/yyyy HH:mm");
     var toTime = DateTime.Now.AddHours(1).ToString("dd/MM/yyyy HH:mm");       
 }
-@Scripts.Render("~/Scripts/bookingValidation")
 
+@Scripts.Render("~/Scripts/bookingValidation")
 @Scripts.Render("~/Scripts/signalRJs")
 <script src="~/signalr/hubs"></script>
 
@@ -102,6 +102,8 @@
 
 <script type="text/javascript">
 
+    $(document).ajaxStart($.blockUI).ajaxStop($.unblockUI);
+
     $(document).ready(function () {
 
         var date = new Date();
@@ -139,9 +141,12 @@
         $.connection.hub.start()
 
         $(".submitBooking").click(function () {
+            $.blockUI();
+
             $.ajax({
                 url: '/booking/Create',
                 contentType: "application/json; charset=utf-8",
+                cache: false,
                 data: JSON.stringify({
                     "Customer.FirstName": $("#CustomerFirstName").val(),
                     "Customer.LastName": $("#CustomerLastName").val(),

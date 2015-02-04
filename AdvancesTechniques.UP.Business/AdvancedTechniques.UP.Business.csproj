@@ -60,6 +60,12 @@
   <ItemGroup>
     <Folder Include="scripts\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AdvancesTechniques.UP.Common\AdvancedTechniques.UP.Common.csproj">
+      <Project>{4caf8d17-1b77-429d-ae02-4603f40bbd5f}</Project>
+      <Name>AdvancedTechniques.UP.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -10,7 +10,7 @@ namespace AdvancedTechniques.UP.Persistence.Sql.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationsEnabled = true;
         }
 
         protected override void Seed(AdvancedTechniques.UP.Persistence.Sql.RestaurantDbContext context)

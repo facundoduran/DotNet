@@ -6,7 +6,7 @@ using AdvancedTechniques.UP.Services;
 using System.Collections.Generic;
 using AdvancedTechniques.UP.Persistence.Sql;
 using System.Data.Entity;
-
+using System.Linq;
 
 namespace AdvancedTechniquesUP.Test
 {
@@ -16,24 +16,26 @@ namespace AdvancedTechniquesUP.Test
         [TestMethod]
         public void GetAllBooking()
         {
-            /*
             Booking booking = new Booking();
 
-            IList<Booking> bookingList = new List<Booking>() { booking };
-                
+            var bookings = new List<Booking>() { booking }.AsQueryable();
+
+            //Mocks
+            var bookingDbSet = new Mock<IDbSet<Booking>>();
+            bookingDbSet.Setup(m => m.GetEnumerator()).Returns(bookings.GetEnumerator());
+
             Mock<IDbContext> dbContextMock = new Mock<IDbContext>();
-            dbContextMock.Setup(x => x.Set<Booking>()).Returns(dbSetMock.Object);
+            dbContextMock.Setup(x => x.Set<Booking>()).Returns(bookingDbSet.Object);
 
-            Mock<IRepository<Booking>> bookingRepository = new Mock<IRepository<Booking>>();
-            bookingRepository.Setup(x => x.GetAll()).Returns(bookingList);
-
-            Mock<IUnitOfWork> unitOfWorkMock = new Mock<IUnitOfWork>();
+            var unitOfWorkMock = new Mock<IUnitOfWork>();
             unitOfWorkMock.Setup(x => x.GetDbContext()).Returns(dbContextMock.Object);
 
+            //Service instance
             IBookingService bookingService = new BookingService(unitOfWorkMock.Object);
 
-            Assert.AreEqual(bookingService.GetAll(), 1);
-            */
+            var allbookings = bookingService.GetAll();
+
+            Assert.AreEqual(allbookings.Any(), true);
         }
     }
 }

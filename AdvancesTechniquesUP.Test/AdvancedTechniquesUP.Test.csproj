@@ -69,6 +69,7 @@
     <Compile Include="BookingServiceTest.cs" />
     <Compile Include="BookingBusinessTest.cs" />
     <Compile Include="BookingViewModelTest.cs" />
+    <Compile Include="UnitOfWorkTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

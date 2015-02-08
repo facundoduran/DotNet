@@ -19,6 +19,8 @@ namespace AdvancedTechniquesUP.Desktop
         private ICustomerService customerService;
         private ITableService tableService;
 
+        private SearchCustomers searchCustomerForm;
+
         public CreateBooking(IBookingService bookingService, ICustomerService customerService, ITableService tableService)
         {
             this.bookingService = bookingService;
@@ -30,7 +32,6 @@ namespace AdvancedTechniquesUP.Desktop
         public void Clear()
         {
             this.txtCustomer.Text = string.Empty;
-            this.txtTable.Text = string.Empty;
             this.txtFromTime.Text = string.Empty;
             this.txtToTime.Text = string.Empty;
 
@@ -38,7 +39,7 @@ namespace AdvancedTechniquesUP.Desktop
             this.lblShowErrors.Visibility = Visibility.Hidden;
         }
 
-        private void btnCreatBooking_Click(object sender, RoutedEventArgs e)
+        private void btnCreateBooking_Click(object sender, RoutedEventArgs e)
         {
             int customerId;
             Int32.TryParse(this.txtCustomer.Text, out customerId);
@@ -106,14 +107,32 @@ namespace AdvancedTechniquesUP.Desktop
 
         }
 
-        private void btnSearchTable_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
         private void btnSearchCustomer_Click(object sender, RoutedEventArgs e)
         {
+            SearchCustomers searchCustomerForm = new SearchCustomers(this.customerService);
 
+            this.ShowModalWindow(searchCustomerForm);
+
+            var customerViewModel = searchCustomerForm.customerViewModel;
+
+            if (customerViewModel != null)
+	        {
+                this.txtCustomer.Text = customerViewModel.Id.ToString();
+	        }
+        }
+
+        private void ShowModalWindow(Window window)
+        {
+            if (window != null)
+            {
+                var modalDialog = (IModalWindow)window;
+                modalDialog.Clear();
+
+                if (window.ShowDialog().HasValue)
+                {
+                    this.IsEnabled = true;
+                }
+            }
         }
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)

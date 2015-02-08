@@ -7,11 +7,10 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto" MinHeight="43"/>
-            <RowDefinition Height="Auto" MinHeight="41"/>
-            <RowDefinition Height="Auto" MinHeight="37"/>
-            <RowDefinition Height="43"/>
-            <RowDefinition Height="52"/>
-            <RowDefinition Height="49"/>
+            <RowDefinition Height="Auto" MinHeight="35"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
 
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
@@ -20,21 +19,16 @@
             <ColumnDefinition Width="75*"/>
         </Grid.ColumnDefinitions>
         <Label Name="lblCustomer" Content="Customer: " FontSize="10" Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="10,10,60,0" Height="23" Width="52"></Label>
-
-        <Label x:Name="lblTable" Content="Table: " FontSize="10" Grid.Row="2" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="10,10,60,0" Height="23" Width="52"/>
-        <Label x:Name="lblFrom" Content="Check in: " FontSize="10" Grid.Row="3" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="10,10,60,0" Height="23" Width="52"/>
-        <Label x:Name="lblTo" Content="Check out: " FontSize="10" Grid.Row="4" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="10,10,60,0" Height="23" Width="52"/>
+        <Label x:Name="lblFrom" Content="Check in: " FontSize="10" Grid.Row="2" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="10,10,60,0" Height="23" Width="52"/>
+        <Label x:Name="lblTo" Content="Check out: " FontSize="10" Grid.Row="3" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="10,10,44,0" Height="23" Width="68"/>
         <TextBox x:Name="txtCustomer" IsEnabled="False" Grid.Column="1" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="175" Grid.Row="1" Margin="10,10,0,0"/>
-        <TextBox x:Name="txtTable" IsEnabled="False" Grid.Column="1" HorizontalAlignment="Left" Height="23" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="175" Margin="10,10,0,0"/>
-        <xctk:DateTimePicker x:Name="txtFromTime" HorizontalAlignment="Left" Grid.Row="3" Width="175" Margin="10,7,0,5" Grid.Column="1" Format="Custom" FormatString="dd/MM/yyyy HH:mm" TimeFormat="Custom" TimeFormatString="HH:mm" />
-        <xctk:DateTimePicker x:Name="txtToTime" HorizontalAlignment="Left" Grid.Row="4" Width="175" Margin="10,10,0,10" Grid.Column="1" Format="Custom" FormatString="dd/MM/yyyy HH:mm" TimeFormat="Custom" TimeFormatString="HH:mm" />
-        <xctk:ByteUpDown x:Name="txtDinnerQuantity" Grid.Column="1" HorizontalAlignment="Left" Height="23" Grid.Row="5" VerticalAlignment="Top" Width="175" Margin="10,10,0,0" />
-
-        <Button x:Name="btnSearchCustomer" Content="Buscar" Grid.Column="2" HorizontalAlignment="Left" Margin="10,0,0,11" Grid.Row="2" VerticalAlignment="Bottom" Width="55" Height="21" Click="btnSearchCustomer_Click"/>
-        <Button x:Name="btnSearchTable" Content="Buscar" Grid.Column="2" HorizontalAlignment="Left" Margin="10,0,0,11" Grid.Row="1" VerticalAlignment="Bottom" Width="55" Height="21" Click="btnSearchTable_Click"/>
-        <Button x:Name="btnCreatBooking" Content="Crear" Grid.Column="2" HorizontalAlignment="Left" Margin="10,0,0,-31" Grid.Row="6" VerticalAlignment="Bottom" Width="55" Height="21" Click="btnCreatBooking_Click"/>
-        <Label x:Name="lblDinnerQuantity" Content="Dinners:" HorizontalAlignment="Left" Height="28" Margin="10,10,0,0" Grid.Row="5" VerticalAlignment="Top" Width="83"/>
-        <Label x:Name="lblErrors" Visibility="Hidden" Content="Label" HorizontalAlignment="Left" Height="29" Margin="10,10,0,0" Grid.Row="6" VerticalAlignment="Top" Width="83"/>
-        <Label x:Name="lblShowErrors" Visibility="Hidden" Grid.Column="1" HorizontalAlignment="Left" Height="72" Margin="10,10,0,-32" Grid.Row="6" VerticalAlignment="Top" Width="175"/>
+        <xctk:DateTimePicker x:Name="txtFromTime" HorizontalAlignment="Left" Grid.Row="2" Width="175" Margin="10,7,0,5" Grid.Column="1" Format="Custom" FormatString="dd/MM/yyyy HH:mm" TimeFormat="Custom" TimeFormatString="HH:mm" />
+        <xctk:DateTimePicker x:Name="txtToTime" HorizontalAlignment="Left" Grid.Row="3" Width="175" Margin="10,10,0,10" Grid.Column="1" Format="Custom" FormatString="dd/MM/yyyy HH:mm" TimeFormat="Custom" TimeFormatString="HH:mm" />
+        <xctk:ByteUpDown x:Name="txtDinnerQuantity" Grid.Column="1" HorizontalAlignment="Left" Height="23" Grid.Row="4" VerticalAlignment="Top" Width="175" Margin="10,10,0,0" />
+        <Button x:Name="btnSearchCustomer" Content="Buscar" Grid.Column="2" HorizontalAlignment="Left" Margin="10,0,0,10" VerticalAlignment="Bottom" Width="55" Height="24" Click="btnSearchCustomer_Click" Grid.Row="1"/>
+        <Button x:Name="btnCreateBooking" Content="Crear" Grid.Column="2" HorizontalAlignment="Left" Margin="10,0,0,-92" Grid.Row="5" VerticalAlignment="Bottom" Width="55" Height="21" Click="btnCreateBooking_Click"/>
+        <Label x:Name="lblDinnerQuantity" Content="Dinners:" HorizontalAlignment="Left" Height="28" Margin="10,10,0,0" Grid.Row="4" VerticalAlignment="Top" Width="83"/>
+        <Label x:Name="lblErrors" Visibility="Hidden" Content="Label" HorizontalAlignment="Left" Height="29" Margin="10,10,0,0" Grid.Row="5" VerticalAlignment="Top" Width="83"/>
+        <Label x:Name="lblShowErrors" Visibility="Hidden" Grid.Column="1" HorizontalAlignment="Left" Height="72" Margin="10,10,0,-32" Grid.Row="5" VerticalAlignment="Top" Width="175"/>
     </Grid>
 </Window>

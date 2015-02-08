@@ -1,4 +1,5 @@
 ﻿using AdvancedTechniques.UP.Business.Model;
+using AdvancedTechniques.UP.Business.ViewModel;
 using AdvancedTechniques.UP.Common.Utils;
 using AdvancedTechniques.UP.Services;
 using System;
@@ -24,6 +25,7 @@ namespace AdvancedTechniquesUP.Desktop
     public partial class SearchCustomers : Window, IModalWindow
     {
         private ICustomerService customerService;
+        public CustomerViewModel customerViewModel { get; set; }
 
         public SearchCustomers(ICustomerService customerService)
         {
@@ -33,10 +35,12 @@ namespace AdvancedTechniquesUP.Desktop
 
         public void Clear()
         {
-            txtFirstName.Text = string.Empty;
-            txtLastName.Text = string.Empty;
-            txtTelephone.Text = string.Empty;
-            txtEmail.Text = string.Empty;
+            this.txtFirstName.Text = string.Empty;
+            this.txtLastName.Text = string.Empty;
+            this.txtTelephone.Text = string.Empty;
+            this.txtEmail.Text = string.Empty;
+
+            this.customerViewModel = new CustomerViewModel();
         }
 
         private void BtnBuscar_Click(object sender, RoutedEventArgs e)
@@ -71,7 +75,23 @@ namespace AdvancedTechniquesUP.Desktop
             this.customersGrid.ItemsSource = this.customerService.Find(criteria).ToList(); 
         }
 
-        private void EditClient_Click(object sender, RoutedEventArgs e)
+        private void SelectCustomer_Click(object sender, RoutedEventArgs e)
+        {
+            var customer = (Customer)this.customersGrid.SelectedItem;
+
+            this.customerViewModel = new CustomerViewModel()
+            {
+                Id = customer.CustomerId,
+                FirstName = customer.FirstName,
+                LastName = customer.LastName,
+                Telephone = customer.Telephone,
+                Email = customer.Email
+            };
+
+            this.DialogResult = true;
+        }
+
+        private void EditCustomer_Click(object sender, RoutedEventArgs e)
         {
             var customer = (Customer)this.customersGrid.SelectedItem;
 
@@ -82,7 +102,7 @@ namespace AdvancedTechniquesUP.Desktop
             updateCustomerForm.FillControls();
         }
 
-        private void DeleteClient_Click(object sender, RoutedEventArgs e)
+        private void DeleteCustomer_Click(object sender, RoutedEventArgs e)
         {
             var customer = (Customer)this.customersGrid.SelectedItem;
 
@@ -101,6 +121,12 @@ namespace AdvancedTechniquesUP.Desktop
                     this.IsEnabled = true;
                 }
             }
+        }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            this.Visibility = Visibility.Hidden;
+            e.Cancel = true;
         }
     }
 }

@@ -1,8 +1,69 @@
 ﻿<Window x:Class="AdvancedTechniquesUP.Desktop.SearchBookings"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="SearchBookings" Height="300" Width="300">
-    <Grid>
-        
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"         
+        xmlns:xcdg="http://schemas.xceed.com/wpf/xaml/datagrid"        
+        Title="Search Bookings" Height="364.285" Width="788.203" Closing="Window_Closing">
+    <Grid Margin="0,0,0,13">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="43"/>
+            <RowDefinition Height="42"/>
+            <RowDefinition Height="127"/>
+
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="118*"/>
+            <ColumnDefinition Width="189*"/>
+            <ColumnDefinition Width="134*"/>
+            <ColumnDefinition Width="115*"/>
+            <ColumnDefinition Width="87*"/>
+            <ColumnDefinition Width="138*"/>
+        </Grid.ColumnDefinitions>
+
+        <xcdg:DataGridControl Name="bookingsGrid" Margin="10,10,9.647,-102" Grid.Row="6" Grid.ColumnSpan="6">
+            <xcdg:DataGridControl.View>
+                <xcdg:TableView ColumnStretchMode="All" UseDefaultHeadersFooters="False" ShowScrollTip="True" ShowRowSelectorPane="False">
+                    <xcdg:TableView.FixedHeaders>
+                        <DataTemplate>
+                            <xcdg:ColumnManagerRow />
+                        </DataTemplate>
+                    </xcdg:TableView.FixedHeaders>
+                </xcdg:TableView>
+            </xcdg:DataGridControl.View>
+            <xcdg:DataGridControl.Columns>
+                <xcdg:Column FieldName="BookingId" IsMainColumn="True" Title="BookingID"/>
+                <xcdg:Column FieldName="FromDate" IsMainColumn="True" Title="Check in"/>
+                <xcdg:Column FieldName="ToDate" IsMainColumn="True" Title="Check out"/>
+                <xcdg:Column FieldName="DinersQuantity" IsMainColumn="True" Title="Dinners"/>
+                <xcdg:Column FieldName="Edit" Title="Action">
+                    <xcdg:Column.CellContentTemplate>
+                        <DataTemplate>
+                            <Button Name="EditBooking" Content="Edit Booking" BorderThickness="0" Background="White" Click="EditBooking_Click"/>
+                        </DataTemplate>
+                    </xcdg:Column.CellContentTemplate>
+                </xcdg:Column>
+                <xcdg:Column FieldName="Delete" Title="">
+                    <xcdg:Column.CellContentTemplate>
+                        <DataTemplate>
+                            <Button Name="DeleteBooking" Content="Delete Booking" BorderThickness="0" Background="White" Click="DeleteBooking_Click"/>
+                        </DataTemplate>
+                    </xcdg:Column.CellContentTemplate>
+                </xcdg:Column>
+            </xcdg:DataGridControl.Columns>
+        </xcdg:DataGridControl>
+        <Label Content="Check In:" HorizontalAlignment="Left" Margin="10,7,0,0" Grid.Row="4" VerticalAlignment="Top" Width="92" Height="26"/>
+        <Label Content="Check out:" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="5" VerticalAlignment="Top" Width="92" Height="26"/>
+        <Label Content="Customer:" Grid.Column="2" HorizontalAlignment="Left" Margin="10.242,6,0,0" Grid.Row="4" VerticalAlignment="Top" RenderTransformOrigin="0.007,-0.12" Width="83" Height="26"/>
+        <Label Content="Dinners:" Grid.Column="2" HorizontalAlignment="Left" Margin="10.242,10,0,0" Grid.Row="5" VerticalAlignment="Top" Width="83" Height="26"/>
+        <Button Name="BtnSearch" Content="Search" Grid.Column="5" HorizontalAlignment="Left" Margin="53.353,12,0,0" Grid.Row="4" VerticalAlignment="Top" Width="75" Height="22" Click="BtnSearch_Click"/>
+        <Button Name="BtnSearchCustomer" Content="Select" Grid.Column="4" HorizontalAlignment="Left" Margin="10.242,10,0,0" Grid.Row="4" VerticalAlignment="Top" Width="57" Height="22" Click="BtnSearchCustomer_Click"/>
+        <xctk:DateTimePicker Name="txtCheckIn" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="10,12,0,0" VerticalAlignment="Top" Width="169" Grid.Row="4"/>
+        <TextBox Name="txtCustomer" Grid.Column="3" HorizontalAlignment="Left" Height="23" Margin="10.242,12,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="93" Grid.Row="4"/>
+        <xctk:DateTimePicker Name="txtCheckOut" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" Grid.Row="5" VerticalAlignment="Top" Width="169"/>
+        <xctk:ByteUpDown Name="txtDinners" Grid.Column="3" HorizontalAlignment="Left" Height="23" Margin="10.242,10,0,0" Grid.Row="5" VerticalAlignment="Top" Width="93"/>
     </Grid>
 </Window>

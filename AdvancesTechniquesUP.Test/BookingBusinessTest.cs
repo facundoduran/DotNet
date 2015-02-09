@@ -3,7 +3,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using AdvancedTechniques.UP.Business.Model;
 using System.Globalization;
 
-namespace AdvancesTechniquesUP.Test
+namespace AdvancedTechniquesUP.Test
 {
     [TestClass]
     public class BookingBusinessTest

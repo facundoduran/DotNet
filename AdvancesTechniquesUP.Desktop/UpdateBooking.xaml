@@ -1,8 +1,34 @@
 ﻿<Window x:Class="AdvancedTechniquesUP.Desktop.UpdateBooking"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="UpdateBooking" Height="300" Width="300">
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit" 
+        Title="Update booking" Height="344.128" Width="407.143" Closing="Window_Closing">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto" MinHeight="43"/>
+            <RowDefinition Height="Auto" MinHeight="35"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="122*"/>
+            <ColumnDefinition Width="202*"/>
+            <ColumnDefinition Width="75*"/>
+        </Grid.ColumnDefinitions>
+        <Label Name="lblCustomer" Content="Customer: " FontSize="10" Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="10,10,60,0" Height="23" Width="52"></Label>
+        <Label x:Name="lblFrom" Content="Check in: " FontSize="10" Grid.Row="2" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="10,10,60,0" Height="23" Width="52"/>
+        <Label x:Name="lblTo" Content="Check out: " FontSize="10" Grid.Row="3" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="10,10,44,0" Height="23" Width="68"/>
+        <TextBox x:Name="txtCustomer" IsEnabled="False" Grid.Column="1" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="175" Grid.Row="1" Margin="10,10,0,0"/>
+        <xctk:DateTimePicker x:Name="txtFromTime" HorizontalAlignment="Left" Grid.Row="2" Width="175" Margin="10,7,0,5" Grid.Column="1" Format="Custom" FormatString="dd/MM/yyyy HH:mm" TimeFormat="Custom" TimeFormatString="HH:mm" />
+        <xctk:DateTimePicker x:Name="txtToTime" HorizontalAlignment="Left" Grid.Row="3" Width="175" Margin="10,10,0,10" Grid.Column="1" Format="Custom" FormatString="dd/MM/yyyy HH:mm" TimeFormat="Custom" TimeFormatString="HH:mm" />
+        <xctk:ByteUpDown x:Name="txtDinnerQuantity" Grid.Column="1" HorizontalAlignment="Left" Height="23" Grid.Row="4" VerticalAlignment="Top" Width="175" Margin="10,10,0,0" />
+        <Button x:Name="btnSearchCustomer" Content="Search" Grid.Column="2" HorizontalAlignment="Left" Margin="10,0,0,10" VerticalAlignment="Bottom" Width="55" Height="24" Click="btnSearchCustomer_Click" Grid.Row="1"/>
+        <Button x:Name="btnUpdateBooking" Content="Edit" Grid.Column="2" HorizontalAlignment="Left" Margin="10,0,0,-92" Grid.Row="5" VerticalAlignment="Bottom" Width="55" Height="21" Click="btnUpdateBooking_Click"/>
+        <Label x:Name="lblDinnerQuantity" Content="Dinners:" HorizontalAlignment="Left" Height="28" Margin="10,10,0,0" Grid.Row="4" VerticalAlignment="Top" Width="83"/>
+        <Label x:Name="lblErrors" Visibility="Hidden" Content="Label" HorizontalAlignment="Left" Height="29" Margin="10,10,0,0" Grid.Row="5" VerticalAlignment="Top" Width="83"/>
+        <Label x:Name="lblShowErrors" Visibility="Hidden" Grid.Column="1" HorizontalAlignment="Left" Height="72" Margin="10,10,0,-32" Grid.Row="5" VerticalAlignment="Top" Width="175"/>
     </Grid>
 </Window>

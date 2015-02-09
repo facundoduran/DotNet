@@ -1,9 +1,9 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using AdvancesTechniquesUP.Test.Helper;
+using AdvancedTechniquesUP.Test.Helper;
 using AdvancedTechniques.UP.Business.ViewModel;
 
-namespace AdvancesTechniquesUP.Test
+namespace AdvancedTechniquesUP.Test
 {
     [TestClass]
     public class BookingViewModelTest

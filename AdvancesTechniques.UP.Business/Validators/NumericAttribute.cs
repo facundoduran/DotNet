@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AdvancesTechniques.UP.Business.Validators
+namespace AdvancedTechniques.UP.Business.Validators
 {
     public class NumericAttribute : ValidationAttribute
     {

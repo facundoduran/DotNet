@@ -67,10 +67,6 @@ namespace AdvancedTechniquesUP.Desktop
             this.ShowModalWindow(this.updateBookingForm);
         }
 
-        private void MenuItemDeleteBooking_Click(object sender, RoutedEventArgs e)
-        {
-        }
-
         private void MenuItemCreateCustomer_Click(object sender, RoutedEventArgs e)
         {
             this.ShowModalWindow(this.createCustomerForm);

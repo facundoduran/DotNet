@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AdvancesTechniquesUP.Test.Helper
+namespace AdvancedTechniquesUP.Test.Helper
 {
     public static class AttributeHelper
     {

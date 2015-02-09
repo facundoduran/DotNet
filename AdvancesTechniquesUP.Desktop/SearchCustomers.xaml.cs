@@ -30,6 +30,8 @@ namespace AdvancedTechniquesUP.Desktop
         public SearchCustomers(ICustomerService customerService)
         {
             this.customerService = customerService;
+            this.customerViewModel = new CustomerViewModel();
+
             InitializeComponent();
         }
 

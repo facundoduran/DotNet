@@ -19,8 +19,6 @@ namespace AdvancedTechniquesUP.Desktop
         private ICustomerService customerService;
         private ITableService tableService;
 
-        private SearchCustomers searchCustomerForm;
-
         public CreateBooking(IBookingService bookingService, ICustomerService customerService, ITableService tableService)
         {
             this.bookingService = bookingService;
